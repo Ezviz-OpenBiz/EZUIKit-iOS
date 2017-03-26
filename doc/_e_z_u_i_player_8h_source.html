@@ -68,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('_e_z_u_i_player_8h_source.html','');})
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>属性</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,7 +105,7 @@ $(document).ready(function(){initNavTree('_e_z_u_i_player_8h_source.html','');})
 <div class="title">EZUIPlayer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="_e_z_u_i_player_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  EZUIPlayer.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  EZUIKit</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
@@ -131,44 +132,45 @@ $(document).ready(function(){initNavTree('_e_z_u_i_player_8h_source.html','');})
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html">   45</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_e_z_u_i_player.html">EZUIPlayer</a> : NSObject</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">@property</span> (nonatomic,readonly) UIView *previewView; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">   48</a></span>&#160;<span class="keyword">@property</span> (nonatomic,weak) id&lt;EZUIPlayerDelegate&gt; <a class="code" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">mDelegate</a>; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">   49</a></span>&#160;<span class="keyword">@property</span> (nonatomic,strong) UIView *<a class="code" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">customIndicatorView</a>; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;+ (<a class="code" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *) createPlayerWithUrl:(NSString *) url;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;+ (<a class="code" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *) createPlayerWithSerial:(NSString *) serial</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                camerNo:(NSUInteger) camerNo</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                             verifyCode:(NSString *) verifyCode</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                     hd:(BOOL) isHd;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#a66a77f82a3caa0632bca5ea7a53ae1fc">startPlay</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#a90c4ba6f38bdd916528d22406ac86fd4">stopPlay</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9">releasePlayer</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;- (void) setAudioOn:(BOOL) on;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;- (void) setPreviewFrame:(CGRect) frame;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html#a80dd501fd779940ba9bbb99a35682b00">   48</a></span>&#160;<span class="keyword">@property</span> (nonatomic,readonly) UIView *<a class="code" href="interface_e_z_u_i_player.html#a80dd501fd779940ba9bbb99a35682b00">previewView</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">   50</a></span>&#160;<span class="keyword">@property</span> (nonatomic,weak) id&lt;EZUIPlayerDelegate&gt; <a class="code" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">mDelegate</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">   52</a></span>&#160;<span class="keyword">@property</span> (nonatomic,strong) UIView *<a class="code" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">customIndicatorView</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+ (<a class="code" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *) createPlayerWithUrl:(NSString *) url;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (<a class="code" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *) createPlayerWithSerial:(NSString *) serial</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                camerNo:(NSUInteger) camerNo</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                             verifyCode:(NSString *) verifyCode</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                     hd:(BOOL) isHd;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#a66a77f82a3caa0632bca5ea7a53ae1fc">startPlay</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#a90c4ba6f38bdd916528d22406ac86fd4">stopPlay</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;- (void) <a class="code" href="interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9">releasePlayer</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;- (void) setAudioOn:(BOOL) on;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;- (void) setPreviewFrame:(CGRect) frame;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">@end</span></div>
 <div class="ttc" id="interface_e_z_u_i_player_html_a66a77f82a3caa0632bca5ea7a53ae1fc"><div class="ttname"><a href="interface_e_z_u_i_player.html#a66a77f82a3caa0632bca5ea7a53ae1fc">-[EZUIPlayer startPlay]</a></div><div class="ttdeci">void startPlay()</div></div>
 <div class="ttc" id="protocol_e_z_u_i_player_delegate-p_html"><div class="ttname"><a href="protocol_e_z_u_i_player_delegate-p.html">EZUIPlayerDelegate-p</a></div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:14</div></div>
 <div class="ttc" id="interface_e_z_u_i_player_html_a90c4ba6f38bdd916528d22406ac86fd4"><div class="ttname"><a href="interface_e_z_u_i_player.html#a90c4ba6f38bdd916528d22406ac86fd4">-[EZUIPlayer stopPlay]</a></div><div class="ttdeci">void stopPlay()</div></div>
+<div class="ttc" id="interface_e_z_u_i_player_html_a80dd501fd779940ba9bbb99a35682b00"><div class="ttname"><a href="interface_e_z_u_i_player.html#a80dd501fd779940ba9bbb99a35682b00">EZUIPlayer::previewView</a></div><div class="ttdeci">UIView * previewView</div><div class="ttdoc">展示画面的视图 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:48</div></div>
 <div class="ttc" id="interface_e_z_u_i_player_html"><div class="ttname"><a href="interface_e_z_u_i_player.html">EZUIPlayer</a></div><div class="ttdoc">播放器类 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:45</div></div>
-<div class="ttc" id="interface_e_z_u_i_player_html_a8ec0692a8d7d18292f0fb51beb9dfaa8"><div class="ttname"><a href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">EZUIPlayer::customIndicatorView</a></div><div class="ttdeci">UIView * customIndicatorView</div><div class="ttdoc">代理 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:49</div></div>
+<div class="ttc" id="interface_e_z_u_i_player_html_a8ec0692a8d7d18292f0fb51beb9dfaa8"><div class="ttname"><a href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">EZUIPlayer::customIndicatorView</a></div><div class="ttdeci">UIView * customIndicatorView</div><div class="ttdoc">默认为系统自带加载动画，如用户自定义需自行控制动画，设置为nil则无加载动画 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:52</div></div>
 <div class="ttc" id="interface_e_z_u_i_player_html_ab64d05307cfbf0cdeb802706e83019a9"><div class="ttname"><a href="interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9">-[EZUIPlayer releasePlayer]</a></div><div class="ttdeci">void releasePlayer()</div></div>
 <div class="ttc" id="interface_e_z_u_i_error_html"><div class="ttname"><a href="interface_e_z_u_i_error.html">EZUIError</a></div><div class="ttdoc">错误信息类 </div><div class="ttdef"><b>Definition:</b> EZUIError.h:61</div></div>
-<div class="ttc" id="interface_e_z_u_i_player_html_a083f9d5df0e35e51756ef3a2519170fd"><div class="ttname"><a href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">EZUIPlayer::mDelegate</a></div><div class="ttdeci">id&lt; EZUIPlayerDelegate &gt; mDelegate</div><div class="ttdoc">展示画面的视图 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:48</div></div>
+<div class="ttc" id="interface_e_z_u_i_player_html_a083f9d5df0e35e51756ef3a2519170fd"><div class="ttname"><a href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">EZUIPlayer::mDelegate</a></div><div class="ttdeci">id&lt; EZUIPlayerDelegate &gt; mDelegate</div><div class="ttdoc">代理 </div><div class="ttdef"><b>Definition:</b> EZUIPlayer.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>EZUIPlayer.h</b></li>
-    <li class="footer">生成于 2017年 三月 23日 星期四 15:43:31 , 为 EZUIKit使用 
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_e_z_u_i_player_8h.html">EZUIPlayer.h</a></li>
+    <li class="footer">生成于 2017年 三月 24日 星期五 10:48:05 , 为 EZUIKit使用 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

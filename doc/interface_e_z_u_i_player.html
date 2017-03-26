@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('interface_e_z_u_i_player.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>属性</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -142,23 +142,20 @@ Instance Methods</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
 <tr class="memitem:ae77510659c9f8a03dcbe2262d127420e"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_e_z_u_i_player.html#ae77510659c9f8a03dcbe2262d127420e">createPlayerWithUrl:</a></td></tr>
-<tr class="memdesc:ae77510659c9f8a03dcbe2262d127420e"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认为系统自带加载动画，如用户自定义需自行控制动画，设置为nil则无加载动画  <a href="#ae77510659c9f8a03dcbe2262d127420e">更多...</a><br /></td></tr>
 <tr class="separator:ae77510659c9f8a03dcbe2262d127420e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85655c73ae299ee916ea6da26434454"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_e_z_u_i_player.html#aa85655c73ae299ee916ea6da26434454">createPlayerWithSerial:camerNo:verifyCode:hd:</a></td></tr>
 <tr class="separator:aa85655c73ae299ee916ea6da26434454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 属性</h2></td></tr>
-<tr class="memitem:a80dd501fd779940ba9bbb99a35682b00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80dd501fd779940ba9bbb99a35682b00"></a>
-UIView *&#160;</td><td class="memItemRight" valign="bottom"><b>previewView</b></td></tr>
+<tr class="memitem:a80dd501fd779940ba9bbb99a35682b00"><td class="memItemLeft" align="right" valign="top">UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_player.html#a80dd501fd779940ba9bbb99a35682b00">previewView</a></td></tr>
+<tr class="memdesc:a80dd501fd779940ba9bbb99a35682b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">展示画面的视图  <a href="#a80dd501fd779940ba9bbb99a35682b00">更多...</a><br /></td></tr>
 <tr class="separator:a80dd501fd779940ba9bbb99a35682b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a083f9d5df0e35e51756ef3a2519170fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a083f9d5df0e35e51756ef3a2519170fd"></a>
-id&lt; <a class="el" href="protocol_e_z_u_i_player_delegate-p.html">EZUIPlayerDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">mDelegate</a></td></tr>
-<tr class="memdesc:a083f9d5df0e35e51756ef3a2519170fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">展示画面的视图 <br /></td></tr>
+<tr class="memitem:a083f9d5df0e35e51756ef3a2519170fd"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_e_z_u_i_player_delegate-p.html">EZUIPlayerDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">mDelegate</a></td></tr>
+<tr class="memdesc:a083f9d5df0e35e51756ef3a2519170fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">代理  <a href="#a083f9d5df0e35e51756ef3a2519170fd">更多...</a><br /></td></tr>
 <tr class="separator:a083f9d5df0e35e51756ef3a2519170fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec0692a8d7d18292f0fb51beb9dfaa8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ec0692a8d7d18292f0fb51beb9dfaa8"></a>
-UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">customIndicatorView</a></td></tr>
-<tr class="memdesc:a8ec0692a8d7d18292f0fb51beb9dfaa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">代理 <br /></td></tr>
+<tr class="memitem:a8ec0692a8d7d18292f0fb51beb9dfaa8"><td class="memItemLeft" align="right" valign="top">UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">customIndicatorView</a></td></tr>
+<tr class="memdesc:a8ec0692a8d7d18292f0fb51beb9dfaa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认为系统自带加载动画，如用户自定义需自行控制动画，设置为nil则无加载动画  <a href="#a8ec0692a8d7d18292f0fb51beb9dfaa8">更多...</a><br /></td></tr>
 <tr class="separator:a8ec0692a8d7d18292f0fb51beb9dfaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
@@ -226,8 +223,6 @@ UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>默认为系统自带加载动画，如用户自定义需自行控制动画，设置为nil则无加载动画 </p>
 <p>创建播放器实例</p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
@@ -333,6 +328,73 @@ UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 
 </div>
 </div>
+<h2 class="groupheader">属性说明</h2>
+<a class="anchor" id="a8ec0692a8d7d18292f0fb51beb9dfaa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIView*) customIndicatorView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认为系统自带加载动画，如用户自定义需自行控制动画，设置为nil则无加载动画 </p>
+
+</div>
+</div>
+<a class="anchor" id="a083f9d5df0e35e51756ef3a2519170fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_e_z_u_i_player_delegate-p.html">EZUIPlayerDelegate</a>&gt;) mDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">weak</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>代理 </p>
+
+</div>
+</div>
+<a class="anchor" id="a80dd501fd779940ba9bbb99a35682b00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIView*) previewView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>展示画面的视图 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>include/<a class="el" href="_e_z_u_i_player_8h_source.html">EZUIPlayer.h</a></li>
 </ul>
@@ -342,7 +404,7 @@ UIView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_e_z_u_i_player.html">EZUIPlayer</a></li>
-    <li class="footer">生成于 2017年 三月 23日 星期四 15:43:31 , 为 EZUIKit使用 
+    <li class="footer">生成于 2017年 三月 24日 星期五 10:48:05 , 为 EZUIKit使用 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

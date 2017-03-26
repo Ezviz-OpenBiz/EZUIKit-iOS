@@ -12,14 +12,18 @@ var NAVTREE =
       ] ]
     ] ],
     [ "文件", null, [
-      [ "文件列表", "files.html", "files" ]
+      [ "文件列表", "files.html", "files" ],
+      [ "文件成员", "globals.html", [
+        [ "全部", "globals.html", null ],
+        [ "宏定义", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_e_z_u_i_error_8h_source.html"
+"_e_z_u_i_error_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

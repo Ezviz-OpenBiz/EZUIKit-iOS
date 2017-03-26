@@ -7,18 +7,22 @@
 
 var indexSectionsWithContent =
 {
-  0: "ceimrs",
+  0: "ceimprsu",
   1: "e",
-  2: "ceirs",
-  3: "cim"
+  2: "e",
+  3: "ceirs",
+  4: "ceimp",
+  5: "u"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "properties"
+  2: "files",
+  3: "functions",
+  4: "properties",
+  5: "defines"
 };
 
 function convertToId(search)

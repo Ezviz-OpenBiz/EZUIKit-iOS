@@ -1,5 +1,7 @@
 var interface_e_z_u_i_player =
 [
+    [ "createPlayerWithSerial:camerNo:verifyCode:hd:", "interface_e_z_u_i_player.html#aa85655c73ae299ee916ea6da26434454", null ],
+    [ "createPlayerWithUrl:", "interface_e_z_u_i_player.html#ae77510659c9f8a03dcbe2262d127420e", null ],
     [ "releasePlayer", "interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9", null ],
     [ "setAudioOn:", "interface_e_z_u_i_player.html#ad9f7c3015fc7fce34cf2863e05394a86", null ],
     [ "setPreviewFrame:", "interface_e_z_u_i_player.html#a44b9a4b0511d1e0617c7661ef8cb86f2", null ],

@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('interface_e_z_u_i_error.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>属性</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,17 +128,15 @@ $(document).ready(function(){initNavTree('interface_e_z_u_i_error.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
 <tr class="memitem:ab3e6f4cfae1e0024308e39c508d39c29"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_e_z_u_i_error.html">EZUIError</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_e_z_u_i_error.html#ab3e6f4cfae1e0024308e39c508d39c29">errorWithInternalErrorCode:</a></td></tr>
-<tr class="memdesc:ab3e6f4cfae1e0024308e39c508d39c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部错误码，开发者可以联系萤石官方人员处理  <a href="#ab3e6f4cfae1e0024308e39c508d39c29">更多...</a><br /></td></tr>
 <tr class="separator:ab3e6f4cfae1e0024308e39c508d39c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 属性</h2></td></tr>
-<tr class="memitem:a8c0289d4ae61dbd25cb4c3ca271cc9da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c0289d4ae61dbd25cb4c3ca271cc9da"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>errorString</b></td></tr>
+<tr class="memitem:a8c0289d4ae61dbd25cb4c3ca271cc9da"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_error.html#a8c0289d4ae61dbd25cb4c3ca271cc9da">errorString</a></td></tr>
+<tr class="memdesc:a8c0289d4ae61dbd25cb4c3ca271cc9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误字符串，见本文件中定义，开发者需要处理  <a href="#a8c0289d4ae61dbd25cb4c3ca271cc9da">更多...</a><br /></td></tr>
 <tr class="separator:a8c0289d4ae61dbd25cb4c3ca271cc9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb1ba287096bc27aefcaf45c05817a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addb1ba287096bc27aefcaf45c05817a6"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_error.html#addb1ba287096bc27aefcaf45c05817a6">internalErrorCode</a></td></tr>
-<tr class="memdesc:addb1ba287096bc27aefcaf45c05817a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误字符串，见本文件中定义，开发者需要处理 <br /></td></tr>
+<tr class="memitem:addb1ba287096bc27aefcaf45c05817a6"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_e_z_u_i_error.html#addb1ba287096bc27aefcaf45c05817a6">internalErrorCode</a></td></tr>
+<tr class="memdesc:addb1ba287096bc27aefcaf45c05817a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部错误码，开发者可以联系萤石官方人员处理  <a href="#addb1ba287096bc27aefcaf45c05817a6">更多...</a><br /></td></tr>
 <tr class="separator:addb1ba287096bc27aefcaf45c05817a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
@@ -157,8 +155,6 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>内部错误码，开发者可以联系萤石官方人员处理 </p>
 <p>创建错误信息实例</p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
@@ -167,6 +163,51 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>错误信息实例 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">属性说明</h2>
+<a class="anchor" id="a8c0289d4ae61dbd25cb4c3ca271cc9da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) errorString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">copy</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>错误字符串，见本文件中定义，开发者需要处理 </p>
+
+</div>
+</div>
+<a class="anchor" id="addb1ba287096bc27aefcaf45c05817a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) internalErrorCode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>内部错误码，开发者可以联系萤石官方人员处理 </p>
 
 </div>
 </div>
@@ -179,7 +220,7 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_e_z_u_i_error.html">EZUIError</a></li>
-    <li class="footer">生成于 2017年 三月 23日 星期四 15:43:31 , 为 EZUIKit使用 
+    <li class="footer">生成于 2017年 三月 24日 星期五 10:48:05 , 为 EZUIKit使用 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
