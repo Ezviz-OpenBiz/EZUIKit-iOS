@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform = :ios,'8.0'
   s.source_files = 'dist/**/*.{h,m,a}'
-  s.frameworks = "AVFoundation","AudioToolbox","OpenAL","VideoToolbox","CoreMedia","GLKit","libiconv.tbd","libc++.tbd","libstdc++.6.0.9.tbd"
+  s.frameworks = 'AVFoundation','AudioToolbox','OpenAL','VideoToolbox','CoreMedia'
+  s.libraries = 'iconv','c++','stdc++.6.0.9'
 end
