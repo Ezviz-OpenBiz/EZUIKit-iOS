@@ -13,17 +13,17 @@ Pod::Spec.new do |s|
   
 s.subspec 'EZOpenSDK' do |ss|
   ss.source_files = 'dist/EZOpenSDK/include/*.h'
-  ss.vendored_libraries = 'dist/EZOpenSDK/*.a'
+  ss.vendored_libraries = 'dist/EZOpenSDK/libEZOpenSDK_arm64.a','dist/EZOpenSDK/libEZOpenSDK_armv7.a'
 end
 
 s.subspec 'EZUIKit' do |ss|
   ss.source_files = 'dist/EZUIKit/include/*.h'
-  ss.vendored_libraries = 'dist/EZUIKit/*.a'
+  ss.vendored_libraries = 'dist/EZUIKit/libEZUIKit.a'
 end
 
 s.subspec 'Openssl' do |ss|
   ss.source_files = 'dist/Openssl/include/openssl/*.h'
-  ss.vendored_libraries = 'dist/Openssl/lib/*.a'
+  ss.vendored_libraries = 'dist/Openssl/lib/libcrypto.a','dist/Openssl/lib/libssl.a'
 end
 
 end
