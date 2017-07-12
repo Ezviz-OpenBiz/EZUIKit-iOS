@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'EZUIKit'
-  s.version  = '1.0.3'
+  s.version  = '1.0.4'
   s.license  = 'MIT'
   s.summary  = 'A UI show video'
   s.homepage = 'https://github.com/Hikvision-Ezviz/EZUIKit-iOS'
@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform = :ios,'8.0'
   s.source_files = 'dist/**/*.{h,m,a}'
+  s.frameworks = "AVFoundation","AudioToolbox","OpenAL","VideoToolbox","CoreMedia","GLKit","libiconv.tbd","libc++.tbd","libstdc++.6.0.9.tbd"
 end
