@@ -10,20 +10,14 @@ Pod::Spec.new do |s|
   s.platform = :ios,'8.0'
   s.frameworks = 'AVFoundation','AudioToolbox','OpenAL','VideoToolbox','CoreMedia'
   s.libraries = 'iconv','c++','stdc++.6.0.9'
+  s.source_files = 'dist/EZOpenSDK/include/*.h'
+  s.vendored_libraries = 'dist/EZOpenSDK/*.a'
+  s.source_files = 'dist/EZUIKit/include/*.h'
+  s.vendored_libraries = 'dist/EZUIKit/*.a'
   
-s.subspec 'EZOpenSDK' do |ss|
-  ss.source_files = 'dist/EZOpenSDK/include/*.h'
-  ss.vendored_libraries = 'dist/EZOpenSDK/libEZOpenSDK_arm64.a','dist/EZOpenSDK/libEZOpenSDK_armv7.a'
-end
-
-s.subspec 'EZUIKit' do |ss|
-  ss.source_files = 'dist/EZUIKit/include/*.h'
-  ss.vendored_libraries = 'dist/EZUIKit/libEZUIKit.a'
-end
-
 s.subspec 'Openssl' do |ss|
   ss.source_files = 'dist/Openssl/include/openssl/*.h'
-  ss.vendored_libraries = 'dist/Openssl/lib/libcrypto.a','dist/Openssl/lib/libssl.a'
+  ss.vendored_libraries = 'dist/Openssl/lib/*.a'
 end
 
 end
