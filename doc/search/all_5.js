@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['releaseplayer',['releasePlayer',['../interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9',1,'EZUIPlayer']]]
+  ['pauseplay',['pausePlay',['../interface_e_z_u_i_player.html#aa43f863ea806fd3da41cd2b42ec78430',1,'EZUIPlayer']]]
 ];

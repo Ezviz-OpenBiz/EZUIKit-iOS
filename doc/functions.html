@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -30,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">EZUIKit
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
   </td>
  </tr>
@@ -81,26 +74,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
     </ul>
   </div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('functions.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>属性</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,7 +89,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </div>
 
 <div class="contents">
-<div class="textblock">这里列出了所有类成员，并附带类的详细说明:</div><ul>
+<div class="textblock">这里列出了所有文档化的类成员，并附带类所属的文件:</div><ul>
 <li>createPlayerWithSerial:camerNo:verifyCode:hd:
 : <a class="el" href="interface_e_z_u_i_player.html#aa85655c73ae299ee916ea6da26434454">EZUIPlayer</a>
 </li>
@@ -119,9 +98,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>customIndicatorView
 : <a class="el" href="interface_e_z_u_i_player.html#a8ec0692a8d7d18292f0fb51beb9dfaa8">EZUIPlayer</a>
-</li>
-<li>errorString
-: <a class="el" href="interface_e_z_u_i_error.html#a8c0289d4ae61dbd25cb4c3ca271cc9da">EZUIError</a>
 </li>
 <li>errorWithInternalErrorCode:
 : <a class="el" href="interface_e_z_u_i_error.html#ab3e6f4cfae1e0024308e39c508d39c29">EZUIError</a>
@@ -132,8 +108,23 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>EZUIPlayer:previewWidth:previewHeight:
 : <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#adfb4e1d8bf10c7c8089ee092d6c6a56a">&lt;EZUIPlayerDelegate&gt;</a>
 </li>
+<li>EZUIPlayerFinished
+: <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a582db7d1df4e5ff3bb77831a8d69865d">&lt;EZUIPlayerDelegate&gt;</a>
+</li>
 <li>EZUIPlayerPlaySucceed:
 : <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a6bea060af4f17a91bf007e9e5279f360">&lt;EZUIPlayerDelegate&gt;</a>
+</li>
+<li>EZUIPlayerPlayTime:
+: <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a2e6640849bf63fa1d1b1f354820a2bf3">&lt;EZUIPlayerDelegate&gt;</a>
+</li>
+<li>EZUIPlayerPrepared
+: <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#ae5853f81d8028886cd84784025a01238">&lt;EZUIPlayerDelegate&gt;</a>
+</li>
+<li>getPlayModeWithUrl:
+: <a class="el" href="interface_e_z_u_i_player.html#a15427abaa6df1ef187a5396048ad5ec9">EZUIPlayer</a>
+</li>
+<li>getVersion
+: <a class="el" href="interface_e_z_u_i_kit.html#aac4f54ea3b31cc0110ce72ed4008acb1">EZUIKit</a>
 </li>
 <li>initWithAppKey:
 : <a class="el" href="interface_e_z_u_i_kit.html#aaa405668c8fa55155ba62a9b9358ce6f">EZUIKit</a>
@@ -144,17 +135,26 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>mDelegate
 : <a class="el" href="interface_e_z_u_i_player.html#a083f9d5df0e35e51756ef3a2519170fd">EZUIPlayer</a>
 </li>
-<li>previewView
-: <a class="el" href="interface_e_z_u_i_player.html#a80dd501fd779940ba9bbb99a35682b00">EZUIPlayer</a>
+<li>pausePlay
+: <a class="el" href="interface_e_z_u_i_player.html#aa43f863ea806fd3da41cd2b42ec78430">EZUIPlayer</a>
+</li>
+<li>recordList
+: <a class="el" href="interface_e_z_u_i_player.html#a05cdd373a3759cc902002adaadd1f2b8">EZUIPlayer</a>
 </li>
 <li>releasePlayer
 : <a class="el" href="interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9">EZUIPlayer</a>
 </li>
+<li>resumePlay
+: <a class="el" href="interface_e_z_u_i_player.html#ad9e3e84b9acd4b1044c2ae1f80f66977">EZUIPlayer</a>
+</li>
+<li>seekToTime:
+: <a class="el" href="interface_e_z_u_i_player.html#a189903fca204ae23447d9d2d0a8f63e6">EZUIPlayer</a>
+</li>
 <li>setAccessToken:
 : <a class="el" href="interface_e_z_u_i_kit.html#a05e50366502d35a391511a6d1385f804">EZUIKit</a>
 </li>
-<li>setAudioOn:
-: <a class="el" href="interface_e_z_u_i_player.html#ad9f7c3015fc7fce34cf2863e05394a86">EZUIPlayer</a>
+<li>setEZOpenUrl:
+: <a class="el" href="interface_e_z_u_i_player.html#a930785c6b847011bc3fd4b8db08f6ba8">EZUIPlayer</a>
 </li>
 <li>setPreviewFrame:
 : <a class="el" href="interface_e_z_u_i_player.html#a44b9a4b0511d1e0617c7661ef8cb86f2">EZUIPlayer</a>
@@ -167,14 +167,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">生成于 2017年 三月 24日 星期五 10:48:05 , 为 EZUIKit使用 
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+生成于 2017年 七月 21日 星期五 14:09:39 , 为 EZUIKit使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
 </body>
 </html>

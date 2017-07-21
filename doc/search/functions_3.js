@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['releaseplayer',['releasePlayer',['../interface_e_z_u_i_player.html#ab64d05307cfbf0cdeb802706e83019a9',1,'EZUIPlayer']]]
+  ['initwithappkey_3a',['initWithAppKey:',['../interface_e_z_u_i_kit.html#aaa405668c8fa55155ba62a9b9358ce6f',1,'EZUIKit']]]
 ];

@@ -9,8 +9,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MainViewController.h"
 #import "EZUIKitViewController.h"
+#import "EZUIKitPlaybackViewController.h"
 #import "QRCodeScanViewController.h"
 #import "EZOpenSDK.h"
+#import "EZUIPlayer.h"
+#import "Toast+UIView.h"
 
 #define EZUIKitAppKey           @"EZUIKitAppKey"
 #define EZUIKitAccessToken      @"EZUIKitAccessToken"
@@ -33,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *appKeyInput;
 @property (weak, nonatomic) IBOutlet UITextField *accessTokenInput;
 @property (weak, nonatomic) IBOutlet UITextField *urlInput;
+@property (weak, nonatomic) IBOutlet UISwitch *playerSwitch;
 @property (weak,nonatomic) UITextField *currentInput;
 
 @end
@@ -120,6 +124,9 @@
 - (void) showQRCodeScanController
 {
     [QRCodeScanViewController showQRCodeScanFrom:self resultBlock:^(NSString *appKey, NSString *accessToken, NSString *urlStr) {
+        
+        NSLog(@"=====appkey:%@,token:%@,url:%@.",appKey,accessToken,urlStr);
+        
         [self stroeAppke:appKey accessToken:accessToken url:urlStr];
         if (appKey)
         {
@@ -140,20 +147,52 @@
 
 - (void) showPlayerControllerWithAppKey:(NSString *) appKey access:(NSString *) accessToken url:(NSString *) urlStr
 {
-    if (!appKey || appKey.length == 0 ||
-        !accessToken || accessToken.length == 0 ||
-        !urlStr || urlStr.length == 0)
+    NSString *alertMsg = nil;
+    if (!appKey || appKey.length == 0)
     {
-        return;
+        alertMsg = @"AppKey不能为空";
     }
     
+    if (!accessToken || accessToken.length == 0)
+    {
+        if (!alertMsg)
+        {
+            alertMsg = @"accessToken不能为空";
+        }
+    }
+    
+    if (!urlStr || urlStr.length == 0)
+    {
+        if (!alertMsg)
+        {
+            alertMsg = @"播放url不能为空";
+        }
+    }
+    
+    if (alertMsg)
+    {
+        [self.view makeToast:alertMsg duration:1.5 position:@"center"];
+        return;
+    }
+
     [self stroeAppke:appKey accessToken:accessToken url:urlStr];
 
-    EZUIKitViewController *vc = [[EZUIKitViewController alloc] init];
-    vc.appKey = appKey;
-    vc.accessToken = accessToken;
-    vc.urlStr = urlStr;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (self.playerSwitch.on && [EZUIPlayer getPlayModeWithUrl:urlStr] == EZUIKIT_PLAYMODE_REC)
+    {
+        EZUIKitPlaybackViewController *vc = [[EZUIKitPlaybackViewController alloc] init];
+        vc.appKey = appKey;
+        vc.accessToken = accessToken;
+        vc.urlStr = urlStr;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        EZUIKitViewController *vc = [[EZUIKitViewController alloc] init];
+        vc.appKey = appKey;
+        vc.accessToken = accessToken;
+        vc.urlStr = urlStr;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (NSString *) readStringWithKey:(NSString *) key

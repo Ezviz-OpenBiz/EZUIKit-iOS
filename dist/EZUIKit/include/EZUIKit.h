@@ -25,4 +25,11 @@
  */
 + (void) setAccessToken:(NSString *) token;
 
+/**
+ 获取EZUIKit版本号
+
+ @return EZUIKit版本号
+ */
++ (NSString *) getVersion;
+
 @end

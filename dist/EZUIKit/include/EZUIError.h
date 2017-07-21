@@ -29,6 +29,10 @@
  */
 #define UE_ERROR_PARAM_ERROR @"UE006"
 /**
+ * 播放地址格式错误，建议重新获取播放地址
+ */
+#define UE_ERROR_URL_FORMAT_ERROR @"UE007"
+/**
  * 设备连接数过大，停止其他连接后再试试吧
  */
 #define UE_ERROR_CAS_MSG_PU_NO_RESOURCE @"UE101"
@@ -56,6 +60,11 @@
  * 设备信息异常为空，建议重新获取播放地址
  */
 #define UE_ERROR_INNER_DEVICE_NULLINFO @"UE107"
+
+/**
+ *  未查找到录像文件
+ */
+#define UE_ERROR_NOT_FOUND_RECORD_FILES @"UE108"
 
 /// 错误信息类
 @interface EZUIError : NSObject

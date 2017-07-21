@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -30,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">EZUIKit
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
   </td>
  </tr>
@@ -73,27 +66,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
       <li><a href="functions.html"><span>类成员</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('protocol_e_z_u_i_player_delegate-p.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>属性</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,6 +80,7 @@ $(document).ready(function(){initNavTree('protocol_e_z_u_i_player_delegate-p.htm
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Instance Methods</a> &#124;
@@ -110,8 +89,6 @@ $(document).ready(function(){initNavTree('protocol_e_z_u_i_player_delegate-p.htm
 <div class="title">&lt;EZUIPlayerDelegate&gt;协议 参考</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#import &lt;<a class="el" href="_e_z_u_i_player_8h_source.html">EZUIPlayer.h</a>&gt;</code></p>
 <div class="dynheader">
 类 &lt;EZUIPlayerDelegate&gt; 继承关系图:</div>
 <div class="dyncontent">
@@ -129,6 +106,12 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a6bea060af4f17a91bf007e9e5279f360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb4e1d8bf10c7c8089ee092d6c6a56a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#adfb4e1d8bf10c7c8089ee092d6c6a56a">EZUIPlayer:previewWidth:previewHeight:</a></td></tr>
 <tr class="separator:adfb4e1d8bf10c7c8089ee092d6c6a56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5853f81d8028886cd84784025a01238"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#ae5853f81d8028886cd84784025a01238">EZUIPlayerPrepared</a></td></tr>
+<tr class="separator:ae5853f81d8028886cd84784025a01238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582db7d1df4e5ff3bb77831a8d69865d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a582db7d1df4e5ff3bb77831a8d69865d">EZUIPlayerFinished</a></td></tr>
+<tr class="separator:a582db7d1df4e5ff3bb77831a8d69865d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6640849bf63fa1d1b1f354820a2bf3"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a2e6640849bf63fa1d1b1f354820a2bf3">EZUIPlayerPlayTime:</a></td></tr>
+<tr class="separator:a2e6640849bf63fa1d1b1f354820a2bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="afcc821b10be8e94e7561d896469ca319"></a>
@@ -222,6 +205,30 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a582db7d1df4e5ff3bb77831a8d69865d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) EZUIPlayerFinished </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>播放结束，回放模式可用 </p>
+
+</div>
+</div>
 <a class="anchor" id="a6bea060af4f17a91bf007e9e5279f360"></a>
 <div class="memitem">
 <div class="memproto">
@@ -253,19 +260,70 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2e6640849bf63fa1d1b1f354820a2bf3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) EZUIPlayerPlayTime: </td>
+          <td></td>
+          <td class="paramtype">(NSDate *)&#160;</td>
+          <td class="paramname"><em>osdTime</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>回放模式有效，播放的当前时间点回调，每1秒回调一次</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">osdTime</td><td>osd时间点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5853f81d8028886cd84784025a01238"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) EZUIPlayerPrepared </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>播放器准备完成回调 </p>
+
+</div>
+</div>
 <hr/>该协议的文档由以下文件生成:<ul>
-<li>include/<a class="el" href="_e_z_u_i_player_8h_source.html">EZUIPlayer.h</a></li>
+<li><a class="el" href="_e_z_u_i_player_8h_source.html">EZUIPlayer.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="protocol_e_z_u_i_player_delegate-p.html">EZUIPlayerDelegate</a></li>
-    <li class="footer">生成于 2017年 三月 24日 星期五 10:48:05 , 为 EZUIKit使用 
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+生成于 2017年 七月 21日 星期五 14:09:39 , 为 EZUIKit使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
 </body>
 </html>
