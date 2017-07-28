@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'EZUIKit'
-  s.version  = '1.0.6'
+  s.version  = '1.0.7'
   s.license  = 'MIT'
   s.summary  = 'A UI show video'
   s.homepage = 'https://github.com/Hikvision-Ezviz/EZUIKit-iOS'
