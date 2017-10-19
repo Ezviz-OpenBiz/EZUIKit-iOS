@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  EZUIKit
+
+  Created by linyong on 2017/9/7.
+  Copyright © 2017年 linyong. All rights reserved.
+*/
+
+
+"play"="播放";
+"stop"="停止";
+"verify_code_wrong"="验证码错误";
+"device_offline"="设备不在线";
+"camera_not_exist"="通道不存在";
+"connect_out_time"="连接超时";
+"connect_device_limit"="设备连接数过大";
+"play_fail"="播放失败";
+"device_not_exist"="设备不存在";
+"not_find_file"="未找到录像文件";
+"param_error"="参数错误";
+"play_url_format_wrong"="播放url格式错误";
+"app_key_msg"="AppKey不能为空";
+"access_token_msg"="accessToken不能为空";
+"url_msg"="播放url不能为空";
+"allow_phone_camera"="摄像头访问受限";
+"know"="知道了";
+"scan_qr"="扫描二维码";
+"alert_title"="提示";
+"allow_camera_tip"="请在设备的`设置-隐私-相机`中允许访问相机。";
+"done"="确定";
+"clear_data"="清除参数";
+"scan"="扫一扫";
+"start_play"="开始播放";
+"playback_bar_switch"="回放进度条开关";
+
+//新增
+"local_btn"="国内版";
+"global_btn"="国际版";
+"api_url_msg"="服务器地址不能为空";
+"url_ezopen_protocal"="3.Url (ezopen协议):";
+

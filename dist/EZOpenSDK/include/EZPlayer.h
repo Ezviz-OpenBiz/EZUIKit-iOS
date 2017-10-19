@@ -10,7 +10,7 @@
 
 @class EZDeviceRecordFile;
 @class EZCloudRecordFile;
-
+@class EZPlayer;
 /**
  *  预览清晰度
  */
@@ -20,7 +20,60 @@ typedef NS_ENUM(NSInteger, EZVideoQuality) {
     EZVideoQualityHigh   = 2   //高清
 };
 
-@protocol EZPlayerDelegate;
+/* 播放器EZPlayer的状态消息定义 */
+typedef NS_ENUM(NSInteger, EZMessageCode) {
+    PLAYER_REALPLAY_START = 1,        //直播开始
+    PLAYER_VIDEOLEVEL_CHANGE = 2,     //直播流清晰度切换中
+    PLAYER_STREAM_RECONNECT = 3,      //直播流取流正在重连
+    PLAYER_VOICE_TALK_START = 4,      //对讲开始
+    PLAYER_VOICE_TALK_END = 5,        //对讲结束
+    PLAYER_STREAM_START = 10,         //录像取流开始
+    PLAYER_PLAYBACK_START = 11,       //录像回放开始播放
+    PLAYER_PLAYBACK_STOP = 12,        //录像回放结束播放
+    PLAYER_PLAYBACK_FINISHED = 13,    //录像回放被用户强制中断
+    PLAYER_PLAYBACK_PAUSE = 14,       //录像回放暂停
+    PLAYER_NET_CHANGED = 21,          //播放器检测到wifi变换过
+    PLAYER_NO_NETWORK = 22,           //播放器检测到无网络
+};
+
+/// 萤石播放器delegate方法
+@protocol EZPlayerDelegate <NSObject>
+
+@optional
+/**
+ *  播放器播放失败错误回调
+ *
+ *  @param player 播放器对象
+ *  @param error  播放器错误，错误码请对照EZOpenSDK头文件中的EZErrorCode使用
+ */
+- (void)player:(EZPlayer *)player didPlayFailed:(NSError *)error;
+
+/**
+ *  播放器消息回调
+ *
+ *  @param player      播放器对象
+ *  @param messageCode 播放器消息码，请对照EZOpenSDK头文件中的EZMessageCode使用
+ */
+- (void)player:(EZPlayer *)player didReceivedMessage:(NSInteger)messageCode;
+
+/**
+ *  收到的数据长度（每秒调用一次）
+ *
+ *  @param player     播放器对象
+ *  @param dataLength 播放器流媒体数据的长度（每秒字节数）
+ */
+- (void)player:(EZPlayer *)player didReceivedDataLength:(NSInteger)dataLength;
+
+/**
+ *  收到的画面长宽值
+ *
+ *  @param player 播放器对象
+ *  @param height 高度
+ *  @param width  宽度
+ */
+- (void)player:(EZPlayer *)player didReceivedDisplayHeight:(NSInteger)height displayWidth:(NSInteger)width;
+
+@end
 
 /// 此类为萤石播放器类
 @interface EZPlayer : NSObject
@@ -46,6 +99,17 @@ typedef NS_ENUM(NSInteger, EZVideoQuality) {
  *  @return EZPlayer对象
  */
 + (instancetype)createPlayerWithUrl:(NSString *)url;
+
+
+/**
+ 局域网设备创建播放器接口
+
+ @param userId 用户id，登录局域网设备后获取
+ @param cameraNo 通道号
+ @param streamType 码流类型 1:主码流 2:子码流
+ @return EZPlayer对象
+ */
++ (instancetype)createPlayerWithUserId:(NSInteger) userId cameraNo:(NSInteger) cameraNo streamType:(NSInteger) streamType;
 
 /**
  *  销毁EZPlayer
@@ -199,43 +263,6 @@ typedef NS_ENUM(NSInteger, EZVideoQuality) {
  */
 - (UIImage *)capturePicture:(NSInteger)quality;
 
-@end
-
-/// 萤石播放器delegate方法
-@protocol EZPlayerDelegate <NSObject>
-
-@optional
-/**
- *  播放器播放失败错误回调
- *
- *  @param player 播放器对象
- *  @param error  播放器错误，错误码请对照EZOpenSDK头文件中的EZErrorCode使用
- */
-- (void)player:(EZPlayer *)player didPlayFailed:(NSError *)error;
-
-/**
- *  播放器消息回调
- *
- *  @param player      播放器对象
- *  @param messageCode 播放器消息码，请对照EZOpenSDK头文件中的EZMessageCode使用
- */
-- (void)player:(EZPlayer *)player didReceivedMessage:(NSInteger)messageCode;
-
-/**
- *  收到的数据长度（每秒调用一次）
- *
- *  @param player     播放器对象
- *  @param dataLength 播放器流媒体数据的长度（每秒字节数）
- */
-- (void)player:(EZPlayer *)player didReceivedDataLength:(NSInteger)dataLength;
-
-/**
- *  收到的画面长宽值
- *
- *  @param player 播放器对象
- *  @param height 高度
- *  @param width  宽度
- */
-- (void)player:(EZPlayer *)player didReceivedDisplayHeight:(NSInteger)height displayWidth:(NSInteger)width;
 
 @end
+

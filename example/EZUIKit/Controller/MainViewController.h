@@ -14,4 +14,6 @@
 
 @interface MainViewController : UIViewController
 
+@property (nonatomic,assign) BOOL globalMode;
+
 @end

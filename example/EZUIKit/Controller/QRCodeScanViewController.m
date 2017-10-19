@@ -21,6 +21,7 @@
 @property (assign,nonatomic) AVAuthorizationStatus authStatus;
 @property (weak, nonatomic) IBOutlet EZQRView *qrView;
 @property (weak, nonatomic) IBOutlet UIImageView *lineImageView;
+@property (weak, nonatomic) IBOutlet UILabel *scanLabel;
 
 @end
 
@@ -45,7 +46,9 @@
 {
     [super viewDidLoad];
     
-    self.title = @"扫描二维码";
+    self.title = NSLocalizedString(@"scan_qr", @"扫描二维码");
+    
+    self.scanLabel.text = NSLocalizedString(@"scan_qr", @"扫描二维码");
     
     _authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (_authStatus == AVAuthorizationStatusAuthorized)
@@ -65,10 +68,10 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                        message:@"请在设备的`设置-隐私-相机`中允许访问相机。"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert_title", @"提示")
+                                                        message:NSLocalizedString(@"allow_camera_tip", @"请在设备的`设置-隐私-相机`中允许访问相机。")
                                                        delegate:self
-                                              cancelButtonTitle:@"确定"
+                                              cancelButtonTitle:NSLocalizedString(@"done", @"确定")
                                               otherButtonTitles:nil];
         [alert show];
     }
@@ -210,8 +213,7 @@
 
         if (self.resultBlock && jsonDic)
         {
-            self.resultBlock(jsonDic[@"AppKey"],jsonDic[@"AccessToken"],jsonDic[@"Url"]);
-            
+            self.resultBlock(jsonDic[@"AppKey"],jsonDic[@"AccessToken"],jsonDic[@"Url"],jsonDic[@"apiUrl"]);
         }
     }
 }

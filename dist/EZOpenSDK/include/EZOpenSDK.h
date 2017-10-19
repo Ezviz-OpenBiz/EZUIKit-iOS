@@ -255,7 +255,7 @@
 + (NSOperation *)setDeviceEncryptStatus:(NSString *)deviceSerial
                              verifyCode:(NSString *)verifyCode
                                 encrypt:(BOOL)isEncrypt
-                             completion:(void (^)(NSError *))completion;
+                             completion:(void (^)(NSError *error))completion;
 
 /**
  *  @since 3.2.0
@@ -541,8 +541,8 @@
  *  @param deviceSerial 设备序列号
  *  @param pageIndex    分页当前页码（从0开始）
  *  @param pageSize     分页每页数量（建议20以内）
- *  @param beginTime    搜索时间范围开始时间（可以为空，nil代表为空）
- *  @param endTime      搜索时间范围结束时间（可以为空，nil代表为空）
+ *  @param beginTime    搜索时间范围开始时间
+ *  @param endTime      搜索时间范围结束时间
  *  @param completion   回调block，正常时返回EZAlarmInfo的对象数据和查询时间范围内的报警个数的总数，错误时返回错误码
  *  @exception 错误码类型：110004、120002、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
@@ -649,5 +649,12 @@
  *  push初始化接口，不需要push服务则无需调用
  */
 + (void) initPushService;
+
+#pragma mark - V4.5 新增加接口
+
+/**
+ 清除取流时的缓存数据
+ */
++ (void) clearStreamInfoCache;
 
 @end

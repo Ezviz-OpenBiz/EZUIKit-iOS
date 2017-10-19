@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "963b15cb-2581-b84c-a797-5ec25b78112f++5799",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "963b15cb-2581-b84c-a797-5ec25b78112f++5799" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "963b15cb-2581-b84c-a797-5ec25b78112f++5799" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "67CBAFCA-AAA6-4BAB-BDF6-2ECE00437284",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "963b15cb-2581-b84c-a797-5ec25b78112f++5799" : "EZUIKit_13\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EZUIKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EZUIKit\/EZUIKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.0.0.241\/Civil-Platform",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "963b15cb-2581-b84c-a797-5ec25b78112f++5799"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, EZErrorCode) {
     EZ_STREAM_CLIENT_NOT_FIND_FILE = 395402,          //回放找不到录像文件，检查传入的回放文件是否正确
     EZ_STREAM_CLIENT_TOKEN_INVALID = 395406,          //取流token验证失效
     EZ_STREAM_CLIENT_CAMERANO_ERROR = 395415,         //设备通道错
-    EZ_STREAM_CLIENT_LIMIT = 395546,                  //设备取流受到限制
+    EZ_STREAM_CLIENT_LIMIT = 395546,                  //设备取流受到限制，升级企业版可放开限制
     /**
      *  HTTP 错误码
      */
@@ -74,20 +74,6 @@ typedef NS_ENUM(NSInteger, EZErrorCode) {
     EZ_SDK_DECODE_TIMEOUT = 400041,                   //解码超时，可能是验证码错误
     EZ_SDK_STREAM_TIMEOUT = 400015,                   //取流超时,请检查手机网络
     EZ_SDK_PLAYBACK_STREAM_TIMEOUT = 400409,          //回放取流超时,请检查手机网络
-};
-
-/* 播放器EZPlayer的状态消息定义 */
-typedef NS_ENUM(NSInteger, EZMessageCode) {
-    PLAYER_REALPLAY_START = 1,        //直播开始
-    PLAYER_VIDEOLEVEL_CHANGE = 2,     //直播流清晰度切换中
-    PLAYER_STREAM_RECONNECT = 3,      //直播流取流正在重连
-    PLAYER_VOICE_TALK_START = 4,      //对讲开始
-    PLAYER_VOICE_TALK_END = 5,        //对讲结束
-    PLAYER_STREAM_START = 10,         //录像取流开始
-    PLAYER_PLAYBACK_START = 11,       //录像回放开始播放
-    PLAYER_PLAYBACK_STOP = 12,        //录像回放结束播放
-    PLAYER_PLAYBACK_FINISHED = 13,    //录像回放被用户强制中断
-    PLAYER_PLAYBACK_PAUSE = 14,       //录像回放暂停
 };
 
 /* WiFi配置设备状态 */

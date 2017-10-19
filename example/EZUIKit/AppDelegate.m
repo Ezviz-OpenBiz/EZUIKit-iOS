@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EZUIKit.h"
-#import "MainViewController.h"
+#import "EZUISelectViewController.h"
 
 
 @interface AppDelegate ()
@@ -21,9 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    MainViewController *vc = [[MainViewController alloc] init];
-    MainNavigationController *nav = [[MainNavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nav;
+    EZUISelectViewController *vc = [[EZUISelectViewController alloc] init];
+    self.window.rootViewController = vc;
     
     return YES;
 }

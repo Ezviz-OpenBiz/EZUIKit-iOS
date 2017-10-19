@@ -12,11 +12,20 @@
 @interface EZUIKit : NSObject
 
 /**
- 初始化EZUIKit
+ 国内版初始化EZUIKit,只适用于国内
 
  @param appKey appkey
  */
 + (void) initWithAppKey:(NSString *) appKey;
+
+/**
+ 国际版初始化EZUIKit，不适用于国内
+ 
+ @param appKey appkey
+ @param apiUrl 对应区域服务器地址
+ */
++ (void) initGlobalWithAppKey:(NSString *) appKey apiUrl:(NSString *) apiUrl;
+
 
 /**
  设置accsess token

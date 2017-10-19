@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray *cameraInfo;
 /// 设备关联的通道数量
 @property (nonatomic) NSInteger cameraNum;
-/// 设备布防状态，A1设备布撤防状态，0:睡眠 8:在家 16:外出；非A1设备，0-撤防 1-布防
+/// 具有防护能力的设备布撤防状态：0-睡眠，8-在家，16-外出，普通IPC布撤防状态：0-撤防，1-布防
 @property (nonatomic) NSInteger defence;
 /// 设备关联的探测器数量
 @property (nonatomic) NSInteger detectorNum;
@@ -41,7 +41,13 @@
 @property (nonatomic) BOOL isSupportPTZ;
 /// 是否支持放大
 @property (nonatomic) BOOL isSupportZoom;
+///是否支持提示音开关
+@property (nonatomic) BOOL isSupportAudioOnOff;
 /// 是否支持镜像翻转
 @property (nonatomic) BOOL isSupportMirrorCenter;
+/// 设备大类
+@property (nonatomic,copy) NSString *category;
+/// 添加时间
+@property (nonatomic,strong) NSDate *addTime;
 
 @end

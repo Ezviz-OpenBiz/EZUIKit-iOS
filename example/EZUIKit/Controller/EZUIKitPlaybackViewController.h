@@ -6,12 +6,8 @@
 //  Copyright © 2017年 linyong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EZUIPlayBaseViewController.h"
 
-@interface EZUIKitPlaybackViewController : UIViewController
-
-@property (nonatomic,copy) NSString *appKey;
-@property (nonatomic,copy) NSString *accessToken;
-@property (nonatomic,copy) NSString *urlStr;
+@interface EZUIKitPlaybackViewController : EZUIPlayBaseViewController
 
 @end
