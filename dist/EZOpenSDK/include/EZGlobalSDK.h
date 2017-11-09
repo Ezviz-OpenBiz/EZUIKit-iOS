@@ -23,6 +23,7 @@
 /// 此类为EZGlobalSDK接口类 特别说明：110001（参数错误）、110002（AccessToken过期）、149999、150000（服务端异常）是所有http接口（返回值是NSOperation对象的大部分是http接口）都会返回的通用错误码，400002为接口参数错误的通用错误码
 @interface EZGlobalSDK : NSObject
 
+
 /**
  *  @since 4.4.0
  *  实例EZOpenSDK接口
@@ -32,6 +33,17 @@
  *  @return YES/NO
  */
 + (BOOL)initLibWithAppKey:(NSString *)appKey;
+
+/**
+ *  实例EZGlobalSDK接口，区域服务器切换接口
+ *
+ *  @param appKey 传入申请的appKey
+ *  @param url apiUrl地址
+ *  @param authUrl auth地址
+ *
+ *  @return YES/NO
+ */
++ (BOOL)initLibWithAppKey:(NSString *)appKey url:(NSString *)url authUrl:(NSString *)authUrl;
 
 /**
  *  @since 1.0.0
@@ -69,7 +81,7 @@
  *  @since 1.0.0
  *  获取区域列表接口
  *
- *  @param completion 回调block
+ *  @param completion 回调block，areaList中的元素为EZAreaInfo对象
  *  @exception 错误码类型：待补充
  *
  *  @return operation

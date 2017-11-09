@@ -81,6 +81,9 @@ typedef NS_ENUM(NSInteger, EZMessageCode) {
 /// EZPlayer关联的delegate
 @property (nonatomic, weak) id<EZPlayerDelegate> delegate;
 
+/// 是否让播放器处理进入后台,YES:自动处理;NO:不处理,默认为YES
+@property (nonatomic) BOOL backgroundModeByPlayer;
+
 /**
  *  根据设备序列号和通道号创建EZPlayer对象
  *
