@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'EZUIKit'
-  s.version  = '1.1.0'
+  s.version  = '1.1.1'
   s.license  = 'MIT'
   s.summary  = 'A UI show video'
   s.homepage = 'https://github.com/Hikvision-Ezviz/EZUIKit-iOS'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
 s.subspec 'EZOpenSDK' do |ss|
   ss.ios.deployment_target = '8.0'
-  ss.vendored_libraries = 'dist/EZOpenSDK/dynamicSDK/*.framework'
+  ss.vendored_frameworks = 'dist/EZOpenSDK/dynamicSDK/*.framework'
 end
 
 end
