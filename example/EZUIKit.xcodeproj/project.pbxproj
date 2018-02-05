@@ -11,7 +11,6 @@
 		490CF08A1E49B359001F7F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CF0891E49B359001F7F76 /* AppDelegate.m */; };
 		490CF0921E49B359001F7F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490CF0911E49B359001F7F76 /* Assets.xcassets */; };
 		490CF0951E49B359001F7F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CF0931E49B359001F7F76 /* LaunchScreen.storyboard */; };
-		490CF0B11E49B3E9001F7F76 /* libEZOpenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF0B01E49B3E9001F7F76 /* libEZOpenSDK.a */; };
 		490CF1071E49B488001F7F76 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF1051E49B488001F7F76 /* libcrypto.a */; };
 		490CF1081E49B488001F7F76 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF1061E49B488001F7F76 /* libssl.a */; };
 		490CF10C1E49B4CD001F7F76 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF10B1E49B4CD001F7F76 /* libstdc++.6.0.9.tbd */; };
@@ -25,6 +24,8 @@
 		490CF11C1E49B51B001F7F76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF11B1E49B51B001F7F76 /* SystemConfiguration.framework */; };
 		490CF1291E49EF2A001F7F76 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF1281E49EF2A001F7F76 /* libiconv.tbd */; };
 		490CF12B1E49EF35001F7F76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CF12A1E49EF35001F7F76 /* AVFoundation.framework */; };
+		49202E6D202850FD009952FF /* EZOpenSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49202E6C202850FD009952FF /* EZOpenSDKFramework.framework */; };
+		49202E6F20285136009952FF /* EZOpenSDKFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49202E6C202850FD009952FF /* EZOpenSDKFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		493A98BC1E5D29A6003136A5 /* EZUIKitPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493A98AD1E5D29A6003136A5 /* EZUIKitPlaybackViewController.m */; };
 		493A98BE1E5D29A6003136A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493A98B01E5D29A6003136A5 /* MainViewController.m */; };
 		493A98BF1E5D29A6003136A5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A98B11E5D29A6003136A5 /* MainViewController.xib */; };
@@ -45,6 +46,19 @@
 		49F7DB221EC4328F00AEAF1A /* EZUIKitPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F7DB211EC4328F00AEAF1A /* EZUIKitPlaybackViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49202E6E2028512D009952FF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49202E6F20285136009952FF /* EZOpenSDKFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		490CF0821E49B359001F7F76 /* EZUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CF0861E49B359001F7F76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,25 +67,6 @@
 		490CF0911E49B359001F7F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490CF0941E49B359001F7F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490CF0961E49B359001F7F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		490CF09E1E49B3E9001F7F76 /* EZAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAccessToken.h; sourceTree = "<group>"; };
-		490CF09F1E49B3E9001F7F76 /* EZAlarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAlarmInfo.h; sourceTree = "<group>"; };
-		490CF0A01E49B3E9001F7F76 /* EZAreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAreaInfo.h; sourceTree = "<group>"; };
-		490CF0A11E49B3E9001F7F76 /* EZCameraInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCameraInfo.h; sourceTree = "<group>"; };
-		490CF0A21E49B3E9001F7F76 /* EZCloudRecordFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCloudRecordFile.h; sourceTree = "<group>"; };
-		490CF0A31E49B3E9001F7F76 /* EZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZConstants.h; sourceTree = "<group>"; };
-		490CF0A41E49B3E9001F7F76 /* EZDetectorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDetectorInfo.h; sourceTree = "<group>"; };
-		490CF0A51E49B3E9001F7F76 /* EZDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceInfo.h; sourceTree = "<group>"; };
-		490CF0A61E49B3E9001F7F76 /* EZDeviceRecordFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceRecordFile.h; sourceTree = "<group>"; };
-		490CF0A71E49B3E9001F7F76 /* EZDeviceUpgradeStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceUpgradeStatus.h; sourceTree = "<group>"; };
-		490CF0A81E49B3E9001F7F76 /* EZDeviceVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDeviceVersion.h; sourceTree = "<group>"; };
-		490CF0A91E49B3E9001F7F76 /* EZGlobalSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZGlobalSDK.h; sourceTree = "<group>"; };
-		490CF0AA1E49B3E9001F7F76 /* EZLeaveMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZLeaveMessage.h; sourceTree = "<group>"; };
-		490CF0AB1E49B3E9001F7F76 /* EZOpenSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZOpenSDK.h; sourceTree = "<group>"; };
-		490CF0AC1E49B3E9001F7F76 /* EZPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZPlayer.h; sourceTree = "<group>"; };
-		490CF0AD1E49B3E9001F7F76 /* EZProbeDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZProbeDeviceInfo.h; sourceTree = "<group>"; };
-		490CF0AE1E49B3E9001F7F76 /* EZStorageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZStorageInfo.h; sourceTree = "<group>"; };
-		490CF0AF1E49B3E9001F7F76 /* EZUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZUserInfo.h; sourceTree = "<group>"; };
-		490CF0B01E49B3E9001F7F76 /* libEZOpenSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEZOpenSDK.a; sourceTree = "<group>"; };
 		490CF0B51E49B488001F7F76 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		490CF0B61E49B488001F7F76 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		490CF0B71E49B488001F7F76 /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -164,7 +159,7 @@
 		490CF11B1E49B51B001F7F76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		490CF1281E49EF2A001F7F76 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		490CF12A1E49EF35001F7F76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		491C81A01E666256002B5FC9 /* EZVideoQualityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZVideoQualityInfo.h; sourceTree = "<group>"; };
+		49202E6C202850FD009952FF /* EZOpenSDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EZOpenSDKFramework.framework; sourceTree = "<group>"; };
 		493A98AC1E5D29A6003136A5 /* EZUIKitPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZUIKitPlaybackViewController.h; sourceTree = "<group>"; };
 		493A98AD1E5D29A6003136A5 /* EZUIKitPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZUIKitPlaybackViewController.m; sourceTree = "<group>"; };
 		493A98AF1E5D29A6003136A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -185,13 +180,9 @@
 		49A451221F95DA5A006B1E6F /* libEZUIKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEZUIKit.a; sourceTree = "<group>"; };
 		49D4B41A1F69137100ADF471 /* EZUIPlayBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZUIPlayBaseViewController.h; sourceTree = "<group>"; };
 		49D4B41B1F69137100ADF471 /* EZUIPlayBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZUIPlayBaseViewController.m; sourceTree = "<group>"; };
-		49D4B4211F6AA2E100ADF471 /* EZHCNetDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHCNetDeviceInfo.h; sourceTree = "<group>"; };
-		49D4B4221F6AA2E100ADF471 /* EZHCNetDeviceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHCNetDeviceSDK.h; sourceTree = "<group>"; };
-		49D4B4231F6AA2E100ADF471 /* EZHiddnsDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHiddnsDeviceInfo.h; sourceTree = "<group>"; };
 		49D4B42F1F6B7C7400ADF471 /* EZUISelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZUISelectViewController.h; sourceTree = "<group>"; };
 		49D4B4301F6B7C7400ADF471 /* EZUISelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZUISelectViewController.m; sourceTree = "<group>"; };
 		49D4B4311F6B7C7400ADF471 /* EZUISelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZUISelectViewController.xib; sourceTree = "<group>"; };
-		49D4B4351F6BA32500ADF471 /* EZSADPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSADPDeviceInfo.h; sourceTree = "<group>"; };
 		49DEDFDF1EAE111A00C6207C /* EZPlaybackProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZPlaybackProgressBar.h; sourceTree = "<group>"; };
 		49DEDFE01EAE111A00C6207C /* EZPlaybackProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZPlaybackProgressBar.m; sourceTree = "<group>"; };
 		49E744421F613D610033B555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -216,12 +207,12 @@
 				490CF1161E49B4FC001F7F76 /* AudioToolbox.framework in Frameworks */,
 				49A451231F95DA5A006B1E6F /* libEZUIKit.a in Frameworks */,
 				490CF1141E49B4EF001F7F76 /* GLKit.framework in Frameworks */,
+				49202E6D202850FD009952FF /* EZOpenSDKFramework.framework in Frameworks */,
 				490CF1121E49B4EB001F7F76 /* CoreMedia.framework in Frameworks */,
 				490CF1101E49B4E5001F7F76 /* OpenAL.framework in Frameworks */,
 				490CF10E1E49B4D4001F7F76 /* libstdc++.tbd in Frameworks */,
 				490CF10C1E49B4CD001F7F76 /* libstdc++.6.0.9.tbd in Frameworks */,
 				490CF1071E49B488001F7F76 /* libcrypto.a in Frameworks */,
-				490CF0B11E49B3E9001F7F76 /* libEZOpenSDK.a in Frameworks */,
 				490CF1081E49B488001F7F76 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,40 +269,9 @@
 		490CF09C1E49B3E9001F7F76 /* EZOpenSDK */ = {
 			isa = PBXGroup;
 			children = (
-				490CF09D1E49B3E9001F7F76 /* include */,
-				490CF0B01E49B3E9001F7F76 /* libEZOpenSDK.a */,
+				49202E6C202850FD009952FF /* EZOpenSDKFramework.framework */,
 			);
 			path = EZOpenSDK;
-			sourceTree = "<group>";
-		};
-		490CF09D1E49B3E9001F7F76 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				49D4B4351F6BA32500ADF471 /* EZSADPDeviceInfo.h */,
-				49D4B4211F6AA2E100ADF471 /* EZHCNetDeviceInfo.h */,
-				49D4B4221F6AA2E100ADF471 /* EZHCNetDeviceSDK.h */,
-				49D4B4231F6AA2E100ADF471 /* EZHiddnsDeviceInfo.h */,
-				491C81A01E666256002B5FC9 /* EZVideoQualityInfo.h */,
-				490CF09E1E49B3E9001F7F76 /* EZAccessToken.h */,
-				490CF09F1E49B3E9001F7F76 /* EZAlarmInfo.h */,
-				490CF0A01E49B3E9001F7F76 /* EZAreaInfo.h */,
-				490CF0A11E49B3E9001F7F76 /* EZCameraInfo.h */,
-				490CF0A21E49B3E9001F7F76 /* EZCloudRecordFile.h */,
-				490CF0A31E49B3E9001F7F76 /* EZConstants.h */,
-				490CF0A41E49B3E9001F7F76 /* EZDetectorInfo.h */,
-				490CF0A51E49B3E9001F7F76 /* EZDeviceInfo.h */,
-				490CF0A61E49B3E9001F7F76 /* EZDeviceRecordFile.h */,
-				490CF0A71E49B3E9001F7F76 /* EZDeviceUpgradeStatus.h */,
-				490CF0A81E49B3E9001F7F76 /* EZDeviceVersion.h */,
-				490CF0A91E49B3E9001F7F76 /* EZGlobalSDK.h */,
-				490CF0AA1E49B3E9001F7F76 /* EZLeaveMessage.h */,
-				490CF0AB1E49B3E9001F7F76 /* EZOpenSDK.h */,
-				490CF0AC1E49B3E9001F7F76 /* EZPlayer.h */,
-				490CF0AD1E49B3E9001F7F76 /* EZProbeDeviceInfo.h */,
-				490CF0AE1E49B3E9001F7F76 /* EZStorageInfo.h */,
-				490CF0AF1E49B3E9001F7F76 /* EZUserInfo.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		490CF0B21E49B488001F7F76 /* Openssl */ = {
@@ -518,6 +478,7 @@
 				490CF07E1E49B359001F7F76 /* Sources */,
 				490CF07F1E49B359001F7F76 /* Frameworks */,
 				490CF0801E49B359001F7F76 /* Resources */,
+				49202E6E2028512D009952FF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -729,6 +690,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 5DHDUGG7JV;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EZUIKit/EZOpenSDK",
+				);
 				INFOPLIST_FILE = EZUIKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -753,6 +718,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 5DHDUGG7JV;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EZUIKit/EZOpenSDK",
+				);
 				INFOPLIST_FILE = EZUIKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

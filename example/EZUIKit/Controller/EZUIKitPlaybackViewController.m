@@ -12,8 +12,8 @@
 #import "EZUIError.h"
 #import "Toast+UIView.h"
 #import "EZPlaybackProgressBar.h"
-#import "EZDeviceRecordFile.h"
-#import "EZCloudRecordFile.h"
+#import <EZOpenSDKFramework/EZOpenSDKFramework.h>
+
 
 @interface EZUIKitPlaybackViewController () <EZUIPlayerDelegate,EZPlaybackProgressDelegate>
 

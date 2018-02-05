@@ -11,7 +11,7 @@
 #import "EZUIKitViewController.h"
 #import "EZUIKitPlaybackViewController.h"
 #import "QRCodeScanViewController.h"
-#import "EZOpenSDK.h"
+#import <EZOpenSDKFramework/EZOpenSDKFramework.h>
 #import "EZUIPlayer.h"
 #import "Toast+UIView.h"
 
