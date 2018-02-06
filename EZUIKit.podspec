@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.platform = :ios,'8.0'
   s.source_files = 'dist/EZUIKit/include/*.h'
   s.vendored_libraries = 'dist/EZUIKit/*.a'  
-  s.dependency = "EZOpenSDK", "1.0.1"
+  s.dependency "EZOpenSDK","1.0.1"
 end
