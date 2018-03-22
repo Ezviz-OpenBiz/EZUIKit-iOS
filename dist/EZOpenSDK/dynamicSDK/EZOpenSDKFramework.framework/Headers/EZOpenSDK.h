@@ -657,4 +657,80 @@
  */
 + (void) clearStreamInfoCache;
 
+#pragma mark - V4.8.2 新增加接口
+
+/**
+ 是否已经登录
+
+ @return YES：已经登录；NO：未登录
+ */
++ (BOOL) isLogin;
+
+/**
+ 获取当前accessToken
+
+ @return accessToken
+ */
++ (NSString *) getAccesstoken;
+
+/**
+ 根据应用类型判断是否安装了对应的应用
+ 
+ @param appType 应用类型
+ @return YES:已安装，NO:没有安装或安装的萤石APP版本过低
+ */
++ (BOOL) isEzvizAppInstalledWithType:(EZAppType) appType;
+
+
+/**
+ 跳转到指定萤石APP进行授权登录
+
+ @param appType 萤石APP类型
+ @return 跳转结果
+ */
++ (BOOL) ezvizLoginWithAppType:(EZAppType) appType;
+
+/**
+ 跳转到指定APP的指定界面
+ 
+ @param pageType 界面类型
+ @param appType APP类型
+ @return 跳转结果
+ */
++ (BOOL) gotoEzvizAppPage:(EZAppPageType) pageType appType:(EZAppType) appType;
+
+/**
+ 外部跳转处理方法，适用于iOS9以上，包括iOS9
+
+ @param url 跳转过来的url
+ @param opetions 参数，默认为空，目前未进行处理，预留
+ @param delegate 委托
+ @return 结果
+ */
++ (BOOL) handleOpenUrl:(NSURL *) url options:(NSDictionary *) opetions delegate:(id<EZOpenSDKDelegate>) delegate;
+
+/**
+ 外部跳转处理方法，适用于iOS8以下,包括iOS8
+
+ @param url 跳转过来的url
+ @param delegate 委托
+ @return 结果
+ */
++ (BOOL) handleOpenUrl:(NSURL *) url delegate:(id<EZOpenSDKDelegate>) delegate;
+
+/**
+ 外部跳转处理方法，适用于iOS8以下,包括iOS8
+
+ @param url 跳转过来的url
+ @param sourceApplication 源APP
+ @param annotation 注释
+ @param delegate 委托
+ @return 结果
+ */
++ (BOOL) handleOpenUrl:(NSURL *) url
+     sourceApplication:(NSString *) sourceApplication
+            annotation:(id) annotation
+              delegate:(id<EZOpenSDKDelegate>) delegate;
+
+
 @end

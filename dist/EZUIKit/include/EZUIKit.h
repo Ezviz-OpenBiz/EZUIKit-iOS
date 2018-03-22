@@ -26,6 +26,12 @@
  */
 + (void) initGlobalWithAppKey:(NSString *) appKey apiUrl:(NSString *) apiUrl;
 
+/**
+ 设置是否开启调试信息打印，建议在初始化之前调用
+
+ @param debugOn 是否开启
+ */
++ (void) setDebug:(BOOL) debugOn;
 
 /**
  设置accsess token

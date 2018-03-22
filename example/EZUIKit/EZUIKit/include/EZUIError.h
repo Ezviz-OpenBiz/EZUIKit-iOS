@@ -33,7 +33,7 @@
  */
 #define UE_ERROR_URL_FORMAT_ERROR @"UE007"
 /**
- * 设备连接数过大，停止其他连接后再试试吧
+ * 设备连接数过大，升级设备固件版本,海康设备可咨询客服获取升级流程
  */
 #define UE_ERROR_CAS_MSG_PU_NO_RESOURCE @"UE101"
 /**
@@ -60,11 +60,14 @@
  * 设备信息异常为空，建议重新获取播放地址
  */
 #define UE_ERROR_INNER_DEVICE_NULLINFO @"UE107"
-
 /**
  *  未查找到录像文件
  */
 #define UE_ERROR_NOT_FOUND_RECORD_FILES @"UE108"
+/**
+ *  取流并发路数限制
+ */
+#define UE_ERROR_STREAM_CLIENT_LIMIT @"UE109"
 
 /// 错误信息类
 @interface EZUIError : NSObject

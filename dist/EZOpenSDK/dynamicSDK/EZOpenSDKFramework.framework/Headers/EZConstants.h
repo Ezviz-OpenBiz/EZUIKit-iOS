@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+//萤石开放平台委托方法
+@protocol EZOpenSDKDelegate <NSObject>
+
+@optional
+
+/**
+ 萤石登录是否成功
+ 
+ @param result 是否成功
+ */
+- (void) ezvizLoginResult:(BOOL) result;
+
+@end
+
+
 /* EZOpenSDK的错误定义 */
 typedef NS_ENUM(NSInteger, EZErrorCode) {
     /**
@@ -109,6 +124,21 @@ typedef NS_ENUM(NSInteger, EZErrorCode) {
     EZ_SDK_DECODE_TIMEOUT = 400041,                   //解码超时，可能是验证码错误
     EZ_SDK_STREAM_TIMEOUT = 400015,                   //取流超时,请检查手机网络
     EZ_SDK_PLAYBACK_STREAM_TIMEOUT = 400409,          //回放取流超时,请检查手机网络
+    
+    /**
+     *  NPC取流错误码
+     */
+    EZ_NPC_CLIENT_PARAMETER_ERROR = 500001,           //参数错误
+    EZ_NPC_CLIENT_ORDER_ERROR = 500002,               //调用顺序出错
+    EZ_NPC_CLIENT_MEMORY_ERROR = 500003,              //分配内存失败
+    EZ_NPC_CLIENT_BUFFER_OVERFLOW_ERROR = 500004,     //缓冲区溢出
+    EZ_NPC_CLIENT_SYSTEM_NO_SUPPORT_ERROR = 500005,   //系统不支持
+    EZ_NPC_CLIENT_INVALID_PORT_ERRO = 500006,         //无效端口
+    EZ_NPC_CLIENT_STREAM_CLOSE_ERROR = 500101,        //流关闭
+    EZ_NPC_CLIENT_TRACK_CLOSE_ERROR = 500102,         //TRACK_CLOSE
+    EZ_NPC_CLIENT_NPCCREATE_ERROR = 500103,           //创建失败
+    EZ_NPC_CLIENT_TRSCREATE_ERROR = 500104,           //TRSCREATE_ERROR
+    EZ_NPC_CLIENT_FAIL_UNKNOWN_ERROR = 509999,        //FAIL_UNKNOWN
 };
 
 /* WiFi配置设备状态 */
@@ -180,6 +210,30 @@ typedef NS_ENUM(NSInteger, EZVideoLevelType)
     EZVideoLevelHigh      = 2,  //高清
     EZVideoLevelSuperHigh = 3   //超清
 };
+
+/* 萤石研发的APP */
+typedef NS_ENUM(NSInteger, EZAppType)
+{
+    EZEzviz                 = 0,  //萤石云视频国内版
+    EZEzvizInternational    = 1,  //萤石云视频海外版
+    EZHIKConnect            = 2,  //HIK-Connect
+};
+
+/* 萤石负责研发的APP */
+typedef NS_ENUM(NSInteger, EZAppPageType)
+{
+    EZPageDeviceList        = 0,  //设备列表页面
+    EZPageAlarmList         = 1,  //报警消息列表页面
+};
+
+///需要进行重新登录的通知，该通知触发频率为5年一次，需在SDK初始化监听
+extern const NSNotificationName EZNeedReloginNotification;
+
+///错误解决方案KEY
+extern const NSString *EZErrorSolutionKey;
+
+///错误模块错误码KEY
+extern const NSString *EZErrorModuleCodeKey;
 
 /// 开放平台常量类
 @interface EZConstants : NSObject

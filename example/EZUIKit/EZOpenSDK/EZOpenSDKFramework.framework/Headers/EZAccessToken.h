@@ -13,7 +13,7 @@
 
 /// accessToken 登录凭证
 @property (nonatomic, copy) NSString *accessToken;
-/// accessToken距离过期的秒数，用当前时间加上expire的秒数为过期时间
+/// accessToken过期的时间点,相对于1970年的毫秒数
 @property (nonatomic, assign) NSInteger expire;
 
 @end
