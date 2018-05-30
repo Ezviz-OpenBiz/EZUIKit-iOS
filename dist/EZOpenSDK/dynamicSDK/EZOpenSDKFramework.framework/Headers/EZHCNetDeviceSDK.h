@@ -91,7 +91,7 @@ typedef NS_ENUM(int, EZEncryptType) {
 /**
  登出局域网设备
 
- @param userID 用户id
+ @param userId 用户id
  @return 成功或失败
  */
 + (BOOL)logoutDeviceWithUserId:(NSInteger) userId;

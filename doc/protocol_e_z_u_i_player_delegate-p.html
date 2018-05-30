@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">EZUIKit
-   &#160;<span id="projectnumber">1.3</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -106,10 +106,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a6bea060af4f17a91bf007e9e5279f360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb4e1d8bf10c7c8089ee092d6c6a56a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#adfb4e1d8bf10c7c8089ee092d6c6a56a">EZUIPlayer:previewWidth:previewHeight:</a></td></tr>
 <tr class="separator:adfb4e1d8bf10c7c8089ee092d6c6a56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5853f81d8028886cd84784025a01238"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#ae5853f81d8028886cd84784025a01238">EZUIPlayerPrepared</a></td></tr>
-<tr class="separator:ae5853f81d8028886cd84784025a01238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a582db7d1df4e5ff3bb77831a8d69865d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a582db7d1df4e5ff3bb77831a8d69865d">EZUIPlayerFinished</a></td></tr>
-<tr class="separator:a582db7d1df4e5ff3bb77831a8d69865d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64be9b7c0ddc1455466c7bbdcb98576a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a64be9b7c0ddc1455466c7bbdcb98576a">EZUIPlayerPrepared:</a></td></tr>
+<tr class="separator:a64be9b7c0ddc1455466c7bbdcb98576a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3aa6a3332bb225f14da0d89393e37dd"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#ab3aa6a3332bb225f14da0d89393e37dd">EZUIPlayerFinished:</a></td></tr>
+<tr class="separator:ab3aa6a3332bb225f14da0d89393e37dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6640849bf63fa1d1b1f354820a2bf3"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_e_z_u_i_player_delegate-p.html#a2e6640849bf63fa1d1b1f354820a2bf3">EZUIPlayerPlayTime:</a></td></tr>
 <tr class="separator:a2e6640849bf63fa1d1b1f354820a2bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -205,7 +205,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a582db7d1df4e5ff3bb77831a8d69865d"></a>
+<a class="anchor" id="ab3aa6a3332bb225f14da0d89393e37dd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -213,9 +213,10 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) EZUIPlayerFinished </td>
+          <td class="memname">- (void) EZUIPlayerFinished: </td>
           <td></td>
-          <td class="paramname"></td>
+          <td class="paramtype">(<a class="el" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *)&#160;</td>
+          <td class="paramname"><em>player</em></td>
           <td></td>
         </tr>
       </table>
@@ -225,7 +226,12 @@ Instance Methods</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>播放结束，回放模式可用 </p>
+<p>播放结束，回放模式可用 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>播放器对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -291,7 +297,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae5853f81d8028886cd84784025a01238"></a>
+<a class="anchor" id="a64be9b7c0ddc1455466c7bbdcb98576a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -299,9 +305,10 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) EZUIPlayerPrepared </td>
+          <td class="memname">- (void) EZUIPlayerPrepared: </td>
           <td></td>
-          <td class="paramname"></td>
+          <td class="paramtype">(<a class="el" href="interface_e_z_u_i_player.html">EZUIPlayer</a> *)&#160;</td>
+          <td class="paramname"><em>player</em></td>
           <td></td>
         </tr>
       </table>
@@ -311,7 +318,12 @@ Instance Methods</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>播放器准备完成回调 </p>
+<p>播放器准备完成回调 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>播放器对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -321,7 +333,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2017年 十月 17日 星期二 15:22:44 , 为 EZUIKit使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2018年 五月 30日 星期三 18:48:18 , 为 EZUIKit使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

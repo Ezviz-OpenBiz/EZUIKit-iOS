@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, EZMessageCode) {
  *  播放器播放失败错误回调
  *
  *  @param player 播放器对象
- *  @param error  播放器错误，错误码请对照EZOpenSDK头文件中的EZErrorCode使用
+ *  @param error  播放器错误
  */
 - (void)player:(EZPlayer *)player didPlayFailed:(NSError *)error;
 

@@ -213,7 +213,7 @@
 
         if (self.resultBlock && jsonDic)
         {
-            self.resultBlock(jsonDic[@"AppKey"],jsonDic[@"AccessToken"],jsonDic[@"Url"],jsonDic[@"apiUrl"]);
+            self.resultBlock(jsonDic);
         }
     }
 }

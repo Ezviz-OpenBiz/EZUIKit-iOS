@@ -1,7 +1,33 @@
-/* 
-  Localizable.strings
-  EZUIKit
 
-  Created by linyong on 2017/9/7.
-  Copyright © 2017年 linyong. All rights reserved.
-*/
+"play"="Play";
+"stop"="Stop";
+"verify_code_wrong"="Incorrect verification code.";
+"device_offline"="The device is offline.";
+"camera_not_exist"="The channel does not exist.";
+"connect_out_time"="Connection timed out.";
+"connect_device_limit"="No more device can be connected.";
+"play_fail"="Playing failed.";
+"device_not_exist"="The device does not exist.";
+"not_find_file"="No video file found.";
+"param_error"="Parameter error.";
+"play_url_format_wrong"="Invalid play URL format.";
+"app_key_msg"="AppKey is required.";
+"access_token_msg"="accessToken is required.";
+"url_msg"="The play URL is required.";
+"allow_phone_camera"="No permission to access the camera.";
+"know"="OK";
+"scan_qr"="Scan QR Code";
+"alert_title"="Prompt";
+"allow_camera_tip"="Allow device to access your camera on Settings-Privacy-Camera on your iPhone.";
+"done"="OK";
+"clear_data"="Clear";
+"scan"="Scan";
+"start_play"="Start";
+"playback_bar_switch"="Display Playback Progress Bar";
+//新增
+"local_btn"="国内版";
+"global_btn"="国际版";
+"api_url_msg"="The server address can not be empty";
+"url_ezopen_protocal"="3.Url (ezopen protocol):";
+
+"switch" = "switch";

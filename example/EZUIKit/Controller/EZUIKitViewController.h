@@ -10,4 +10,6 @@
 
 @interface EZUIKitViewController : EZUIPlayBaseViewController
 
+@property (nonatomic,copy) NSString *urlStrOhter;
+
 @end

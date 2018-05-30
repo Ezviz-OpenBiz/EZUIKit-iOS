@@ -22,7 +22,6 @@
 
 @end
 
-
 /* EZOpenSDK的错误定义 */
 typedef NS_ENUM(NSInteger, EZErrorCode) {
     /**
@@ -68,7 +67,7 @@ typedef NS_ENUM(NSInteger, EZErrorCode) {
     EZ_STREAM_CLIENT_VIDEO_OUT_SHARE_TIME = 395545,   //视频分享时间已经结束
     EZ_STREAM_CLIENT_LIMIT = 395546,                  //设备取流受到限制，升级企业版可放开限制
     EZ_STREAM_CLIENT_DEVICE_OUT_SHARE_TIME = 395600,  //分享设备不在分享时间内
-
+    
     /**
      *  HTTP 错误码
      */
@@ -133,7 +132,7 @@ typedef NS_ENUM(NSInteger, EZErrorCode) {
     EZ_NPC_CLIENT_MEMORY_ERROR = 500003,              //分配内存失败
     EZ_NPC_CLIENT_BUFFER_OVERFLOW_ERROR = 500004,     //缓冲区溢出
     EZ_NPC_CLIENT_SYSTEM_NO_SUPPORT_ERROR = 500005,   //系统不支持
-    EZ_NPC_CLIENT_INVALID_PORT_ERRO = 500006,         //无效端口
+    EZ_NPC_CLIENT_INVALID_PORT_ERROR = 500006,         //无效端口
     EZ_NPC_CLIENT_STREAM_CLOSE_ERROR = 500101,        //流关闭
     EZ_NPC_CLIENT_TRACK_CLOSE_ERROR = 500102,         //TRACK_CLOSE
     EZ_NPC_CLIENT_NPCCREATE_ERROR = 500103,           //创建失败
@@ -182,7 +181,7 @@ typedef NS_ENUM(NSInteger, EZMessageStatus) {
 /* 消息类型 */
 typedef NS_ENUM(NSInteger, EZMessageType)
 {
-    EZMessageTypeAlarm = 1,   //报警类型
+    EZMessageTypeAlarm = 1,   //告警类型
     EZMessageTypeLeave,       //留言类型
 };
 
@@ -223,7 +222,14 @@ typedef NS_ENUM(NSInteger, EZAppType)
 typedef NS_ENUM(NSInteger, EZAppPageType)
 {
     EZPageDeviceList        = 0,  //设备列表页面
-    EZPageAlarmList         = 1,  //报警消息列表页面
+    EZPageAlarmList         = 1,  //告警消息列表页面
+};
+
+/* 配网方式 */
+typedef NS_ENUM(NSInteger, EZWiFiConfigMode)
+{
+    EZWiFiConfigSmart        = 1 << 0,  //smart config
+    EZWiFiConfigWave         = 1 << 1,  //声波配网
 };
 
 ///需要进行重新登录的通知，该通知触发频率为5年一次，需在SDK初始化监听

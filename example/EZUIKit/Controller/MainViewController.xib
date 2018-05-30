@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -140,14 +140,14 @@
                     </connections>
                 </button>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-PR-FVU">
-                    <rect key="frame" x="305" y="520" width="51" height="31"/>
+                    <rect key="frame" x="305" y="524" width="51" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="0PN-N2-ssE"/>
                         <constraint firstAttribute="width" constant="49" id="4e7-xM-ObF"/>
                     </constraints>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回放进度条开关" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-j0-Xcv">
-                    <rect key="frame" x="16" y="525" width="281" height="21"/>
+                    <rect key="frame" x="16" y="529" width="281" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="dpX-OF-53Q"/>
                     </constraints>
@@ -215,7 +215,7 @@
                 <constraint firstItem="Jju-hr-rrf" firstAttribute="top" secondItem="a6j-5m-bSG" secondAttribute="bottom" constant="4" id="t0o-8h-gye"/>
                 <constraint firstItem="a6j-5m-bSG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="tmP-0a-frg"/>
                 <constraint firstItem="Bxl-JH-KgT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="x02-K0-b9Z"/>
-                <constraint firstItem="ZVN-PR-FVU" firstAttribute="top" secondItem="3PU-ox-qKq" secondAttribute="bottom" constant="8" id="xNI-12-Jg5"/>
+                <constraint firstItem="ZVN-PR-FVU" firstAttribute="top" secondItem="3PU-ox-qKq" secondAttribute="bottom" constant="12" id="xNI-12-Jg5"/>
                 <constraint firstAttribute="trailing" secondItem="2r5-xb-Nnb" secondAttribute="trailing" constant="16" id="yRJ-tc-24h"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

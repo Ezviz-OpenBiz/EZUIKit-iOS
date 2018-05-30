@@ -8,22 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-/// 此类为报警信息对象
+/// 此类为告警信息对象
 @interface EZAlarmInfo : NSObject
 
-/// 报警ID
+/// 告警ID
 @property (nonatomic, copy) NSString *alarmId;
 /// 设备序列号
 @property (nonatomic, copy) NSString *deviceSerial;
 /// 通道号
 @property (nonatomic) NSInteger cameraNo;
-/// 报警名称
+/// 告警名称
 @property (nonatomic, copy) NSString *alarmName;
-/// 报警图片
+/// 告警图片
 @property (nonatomic, copy) NSString *alarmPicUrl;
-/// 报警开始时间
+/// 告警开始时间
 @property (nonatomic, strong) NSDate *alarmStartTime;
-/// 报警类型
+/// 告警类型
 @property (nonatomic) NSInteger alarmType;
 /// 是否加密
 @property (nonatomic) BOOL isEncrypt;
@@ -31,9 +31,9 @@
 @property (nonatomic) BOOL isRead;
 /// 存储类型，0-无存储，1-萤石，2-百度，4-sd卡存储，5-萤石和sd卡，6-百度和sd卡
 @property (nonatomic) NSInteger recState;
-/// 报警录像结束时间时间延后偏移量，通过alarmStartTime加上延后偏移量获得报警录像的具体结束时间
+/// 告警录像结束时间时间延后偏移量，通过alarmStartTime加上延后偏移量获得告警录像的具体结束时间
 @property (nonatomic) NSInteger delayTime;
-/// 报警录像开始时间提前偏移量，通过alarmStartTime减去提前偏移量获得报警录像的具体开始时间
+/// 告警录像开始时间提前偏移量，通过alarmStartTime减去提前偏移量获得告警录像的具体开始时间
 @property (nonatomic) NSInteger preTime;
 /// 设备名称
 @property (nonatomic, copy) NSString *deviceName;

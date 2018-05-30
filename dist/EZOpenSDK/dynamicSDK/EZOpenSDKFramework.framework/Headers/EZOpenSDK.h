@@ -69,17 +69,15 @@
  *  账户注销接口
  *
  *  @param completion 回调block，error为空表示登出成功
- *  @exception 错误码类型：待补充
  */
 + (void)logout:(void (^)(NSError *error))completion;
 
 /**
  *  @since 3.0.0
- *  根据alarmId删除报警信息接口
+ *  根据alarmId删除告警信息接口
  *
- *  @param alarmIds   报警信息Id数组(可以只有一个Id)，最多为10个Id，否则会报错
+ *  @param alarmIds   告警信息Id数组(可以只有一个Id)，最多为10个Id，否则会报错
  *  @param completion 回调block，error为空时表示删除成功
- *  @exception 错误码类型：110004、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -88,12 +86,11 @@
 
 /**
  *  @since 3.0.0
- *  设置报警信息为已读接口
+ *  设置告警信息为已读接口
  *
- *  @param alarmIds   报警信息Id数组(可以只有一个Id)，最多为10个id,否则会报错
- *  @param status     报警消息状态
+ *  @param alarmIds   告警信息Id数组(可以只有一个Id)，最多为10个id,否则会报错
+ *  @param status     告警消息状态
  *  @param completion 回调block，error为空时表示设置成功
- *  @exception 错误码类型：110004、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -108,7 +105,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，error为空时表示删除成功
- *  @exception 错误码类型：106002，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *  @see 该接口与终端绑定功能相关，会遇到删除时报106002的错误，请关闭终端绑定以后再试
  *
  *  @return operation
@@ -150,7 +146,6 @@
  *  @param action       控制启动/停止
  *  @param speed        云台速度：0-慢，1-适中，2-快
  *  @param resultBlock  回调block，当error为空时表示操作成功
- *  @exception 错误码类型：160000、160001~160006、160009等错误码，具体参考EZOpenSDK头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -169,7 +164,6 @@
  *  @param cameraNo     通道号
  *  @param command      显示控制命令
  *  @param resultBlock  回调block，当error为空时表示操作成功
- *  @exception 错误码类型：160000、160001、160006、160009等错误码，具体参考EZOpenSDK头文件中的EZErrorCode错误码注释
  */
 + (void)controlVideoFlip:(NSString *)deviceSerial
                 cameraNo:(NSInteger)cameraNo
@@ -232,7 +226,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，正常时返回EZDeviceVersion的对象信息，错误时返回错误码
- *  @exception 错误码类型：110004、120002、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -248,7 +241,6 @@
  *  @param deviceSerial 设备序列号
  *  @param verifyCode 设备验证码
  *  @param completion   回调block，error为空时表示操作成功
- *  @exception 错误码类型：110004、120002、120006、120007、120008、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -264,7 +256,6 @@
  *  @param deviceSerial 设备序列号
  *  @param deviceName   设备名称
  *  @param completion   回调block，error为空时表示修改成功
- *  @exception 错误码类型：110004、120002、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -277,7 +268,6 @@
  *  获取用户基本信息的接口
  *
  *  @param completion 回调block， 正常时返回EZUserInfo的对象，错误时返回错误码
- *  @exception 错误码类型：110004，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -288,9 +278,8 @@
  *  根据设备序列号获取未读消息数，设备序列号为空时获取所有设备的未读消息数
  *
  *  @param deviceSerial 需要获取的设备序列号，为空时返回账户下所有设备的未读消息数
- *  @param type         消息类型：EZMessageTypeAlarm 报警消息（1），EZMessageTypeLeave 留言消息（2）
+ *  @param type         消息类型：EZMessageTypeAlarm 告警消息（1），EZMessageTypeLeave 留言消息（2）
  *  @param completion   回调block，正常时返回未读数量，错误时返回错误码
- *  @exception 错误码类型：110004、120002、120014、120018、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -308,7 +297,6 @@
  *  @param pageIndex    分页页码
  *  @param pageSize     分页单页数量
  *  @param completion   回调block，正常时返回EZLeaveMessage的对象数组，错误时返回错误码
- *  @exception 错误码类型：110004、120002、120014、120018、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -326,7 +314,6 @@
  *  @param leaveIds   留言消息Id数组(最大数量为10，允许只有1个)
  *  @param status     需要设置的留言状态，目前只支持 EZMessageStatusRead(已读)
  *  @param completion 回调block，error为空表示设置成功
- *  @exception 错误码类型：110004、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -340,7 +327,6 @@
  *
  *  @param leaveIds   留言消息Id数组(最大数量为10，允许只有1个)
  *  @param completion 回调block，error为空表示删除成功
- *  @exception 错误码类型：110004、120202，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -353,7 +339,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，正常时返回EZStorageInfo的对象数组，错误时返回错误码
- *  @exception 错误码类型：110004、120002、120006、120007、120008、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -367,7 +352,6 @@
  *  @param deviceSerial 设备序列号
  *  @param storageIndex 查询返回的分区号，0表示全部格式化，可能会有几块硬盘的情况
  *  @param completion   回调block，error为空表示设置成功
- *  @exception 错误码类型：110004、120002、120006、120007、120008、120014、120016、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -380,7 +364,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，正常时返回EZProbeDeviceInfo对象，错误码返回错误码
- *  @exception 错误码类型：110004、120002、120014、120020、120021、120022、120023、120024、120029，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *  @see 全新的设备是没有注册到平台的，所以会出现设备不存在的情况，设备wifi配置成功以后会上报数据到萤石云平台，以后每次查询就不会出现设备不存在的情况了。
  *
  *  @return operation
@@ -394,7 +377,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，正常时返回EZDeviceUpgradeStatus对象，错误时返回错误码
- *  @exception 错误码类型：120002、120006、120007、120008、120014，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -407,7 +389,6 @@
  *
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，error为空表示操作成功
- *  @exception 错误码类型：120002、120006、120007、120008、120014，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -473,7 +454,6 @@
  *  @param pageIndex  分页当前页码（从0开始）
  *  @param pageSize   分页每页数量（建议20以内）
  *  @param completion 回调block，正常时返回EZDeviceInfo的对象数组和设备总数，错误时返回错误码
- *  @exception 错误码类型：110004，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -488,7 +468,6 @@
  *  @param pageIndex  分页当前页码（从0开始）
  *  @param pageSize   分页每页数量（建议20以内）
  *  @param completion 回调block，正常时返回EZDeviceInfo的对象数组和设备总数，错误时返回错误码
- *  @exception 错误码类型：110004，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -505,7 +484,6 @@
  *  @param beginTime    查询时间范围开始时间
  *  @param endTime      查询时间范围结束时间
  *  @param completion   回调block，正常时返回EZCloudRecordFile的对象数组，错误时返回错误码
- *  @exception 错误码类型：110004，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -524,7 +502,6 @@
  *  @param beginTime    查询时间范围开始时间
  *  @param endTime      查询时间范围结束时间
  *  @param completion   回调block，正常时返回EZDeviceRecordFile的对象数组，错误时返回错误码
- *  @exception 错误码类型：110004，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -536,15 +513,14 @@
 
 /**
  *  @since 4.2.0
- *  根据设备序列号获取报警信息列表，设备序列号为nil时查询整个账户下的报警信息列表
+ *  根据设备序列号获取告警信息列表，设备序列号为nil时查询整个账户下的告警信息列表
  *
  *  @param deviceSerial 设备序列号
  *  @param pageIndex    分页当前页码（从0开始）
  *  @param pageSize     分页每页数量（建议20以内）
  *  @param beginTime    搜索时间范围开始时间
  *  @param endTime      搜索时间范围结束时间
- *  @param completion   回调block，正常时返回EZAlarmInfo的对象数据和查询时间范围内的报警个数的总数，错误时返回错误码
- *  @exception 错误码类型：110004、120002、120014、120018，具体参考EZConstants头文件中的EZErrorCode错误码注释
+ *  @param completion   回调block，正常时返回EZAlarmInfo的对象数据和查询时间范围内的告警个数的总数，错误时返回错误码
  *
  *  @return operation
  */
@@ -562,7 +538,6 @@
  *  @param deviceSerial 设备序列号
  *  @param verifyCode   设备验证码
  *  @param completion   回调block，error为空时表示添加成功
- *  @exception 错误码类型：120002、120006、120007、120008、120014，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -577,7 +552,6 @@
  *  @param deviceSerial 设备序列号
  *  @param cameraNo     通道号
  *  @param completion   回调block，正常时返回url地址信息，错误时返回错误码
- *  @exception 错误码类型：120001、120002、120006、120008，具体参考EZConstants头文件中的EZErrorCode错误码注释
  *  @see 该接口比较耗时，不建议进行批量设备抓图，SDK内部只支持6个http请求并发，该接口会持续占用http请求资源，如果遇到http请求延时巨大问题，优先考虑抓图接口并发造成的问题,
  *  抓图将在服务器端保留2个小时
  *
@@ -612,7 +586,6 @@
  *  @param defence      布防状态, IPC布防状态只有0和1，A1有0:睡眠 8:在家 16:外出
  *  @param deviceSerial 设备序列号
  *  @param completion   回调block，error为空表示设置成功
- *  @exception 错误码类型：110004、120002、120014、120018，具体参考EZOpenSDK头文件中的EZErrorCode错误码注释
  *
  *  @return operation
  */
@@ -732,5 +705,24 @@
             annotation:(id) annotation
               delegate:(id<EZOpenSDKDelegate>) delegate;
 
+#pragma mark - V4.8.3 新增加接口
+
+/**
+ *  @since 4.8.3
+ *  WiFi配置开始接口
+ *
+ *  @param ssid         连接WiFi SSID
+ *  @param password     连接WiFi 密码
+ *  @param deviceSerial 连接WiFi的设备的设备序列号,批量配置时填nil
+ *  @param mode         配网的方式，EZWiFiConfigMode中列举的模式进行任意组合,例如:EZWiFiConfigSmart|EZWiFiConfigWave
+ *  @param statusBlock  返回设备序列号以及当前连接状态
+ *
+ *  @return YES/NO
+ */
++ (BOOL)startConfigWifi:(NSString *) ssid
+               password:(NSString *) password
+           deviceSerial:(NSString *) deviceSerial
+                   mode:(NSInteger) mode
+           deviceStatus:(void (^)(EZWifiConfigStatus status,NSString *deviceSerial))statusBlock;
 
 @end

@@ -20,9 +20,9 @@
 @property (nonatomic,assign) NSInteger dChannelCount;
 ///起始数字通道号，0为无效果
 @property (nonatomic,assign) NSInteger dStartChannelNo;
-///报警输入个数
+///告警输入个数
 @property (nonatomic,assign) NSInteger byAlarmInPortNum;
-///报警输出个数
+///告警输出个数
 @property (nonatomic,assign) NSInteger byAlarmOutPortNum;
 ///硬盘个数
 @property (nonatomic,assign) NSInteger byDiskNum;

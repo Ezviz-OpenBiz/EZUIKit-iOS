@@ -11,14 +11,17 @@
 #import "EZUIKitViewController.h"
 #import "EZUIKitPlaybackViewController.h"
 #import "QRCodeScanViewController.h"
-#import <EZOpenSDKFramework/EZOpenSDKFramework.h>
+#import "EZOpenSDK.h"
 #import "EZUIPlayer.h"
 #import "Toast+UIView.h"
+#import "EZUIKit.h"
 
 #define EZUIKitAppKey           @"EZUIKitAppKey"
 #define EZUIKitAccessToken      @"EZUIKitAccessToken"
 #define EZUIKitUrlStr           @"EZUIKitUrlStr"
+#define EZUIKitUrlStrOhter      @"EZUIKitUrlStrOhter"
 #define EZUIKitApiUrl           @"EZUIKitApiUrl"
+#define EZUIKitMode           @"EZUIKitMode"
 
 #define MAIN_TITLE @"EZUIKit Demo"
 
@@ -57,6 +60,9 @@
     [super viewDidLoad];
     
     self.title = MAIN_TITLE;
+
+    //开启调试模式
+    [EZUIKit setDebug:YES];
     
     [self initViews];
     [self addTouch];
@@ -102,6 +108,7 @@
     NSString *appKey = [self readStringWithKey:EZUIKitAppKey];
     NSString *accessToken = [self readStringWithKey:EZUIKitAccessToken];
     NSString *urlStr = [self readStringWithKey:EZUIKitUrlStr];
+    NSString *urlStrOther = [self readStringWithKey:EZUIKitUrlStrOhter];
     NSString *apiUrl = [self readStringWithKey:EZUIKitApiUrl];
     
     if (appKey)
@@ -116,7 +123,14 @@
     
     if (urlStr)
     {
-        self.urlInput.text = urlStr;
+        if (urlStrOther)
+        {
+            self.urlInput.text = [NSString stringWithFormat:@"%@,%@",urlStr,urlStrOther];
+        }
+        else
+        {
+            self.urlInput.text = urlStr;
+        }
     }
     
     self.apiInput.text = apiUrl;
@@ -145,11 +159,29 @@
 }
 - (void) showQRCodeScanController
 {
-    [QRCodeScanViewController showQRCodeScanFrom:self resultBlock:^(NSString *appKey, NSString *accessToken, NSString *urlStr,NSString *apiUrl) {
+    [QRCodeScanViewController showQRCodeScanFrom:self resultBlock:^(NSDictionary *jsonInfo){
         
-        NSLog(@"=====appkey:%@,token:%@,url:%@,apiUrl:%@.",appKey,accessToken,urlStr,apiUrl);
+        NSLog(@"=====url json info:%@",jsonInfo);
         
-        [self stroeAppke:appKey accessToken:accessToken url:urlStr apiUrl:apiUrl];
+        NSString *appKey = jsonInfo[@"AppKey"];
+        NSString *accessToken = jsonInfo[@"AccessToken"];
+        id urlObjc =jsonInfo[@"Url"];
+        NSString *urlStr = nil,*urlStrOther = nil;
+        NSString *apiUrl = jsonInfo[@"apiUrl"];
+        NSString *modeStr = jsonInfo[@"Type"];
+
+        if ([urlObjc isKindOfClass:[NSArray class]])
+        {
+            urlStr = [(NSArray*)urlObjc firstObject];
+            urlStrOther = [(NSArray*)urlObjc lastObject];
+        }
+        else
+        {
+            urlStr = (NSString*)urlObjc;
+        }
+        
+        [self stroeAppkey:appKey accessToken:accessToken url:urlStr urlStrOther:urlStrOther apiUrl:apiUrl mode:modeStr];
+        
         if (appKey)
         {
             self.appKeyInput.text = appKey;
@@ -169,7 +201,11 @@
     }];
 }
 
-- (void) showPlayerControllerWithAppKey:(NSString *) appKey access:(NSString *) accessToken url:(NSString *) urlStr apiUrl:(NSString *) apiUrl
+- (void) showPlayerControllerWithAppKey:(NSString *) appKey
+                                 access:(NSString *) accessToken
+                                    url:(NSString *) urlStr
+                                 apiUrl:(NSString *) apiUrl
+                                   mode:(NSString *) modeStr
 {
     NSString *alertMsg = nil;
     if (!appKey || appKey.length == 0)
@@ -206,8 +242,16 @@
         [self.view makeToast:alertMsg duration:1.5 position:@"center"];
         return;
     }
+    
+    NSString *urlStrOther = nil;
+    NSArray *tempArr = [urlStr componentsSeparatedByString:@","];
+    if (tempArr.count == 2)
+    {
+        urlStr = [tempArr firstObject];
+        urlStrOther = [tempArr lastObject];
+    }
 
-    [self stroeAppke:appKey accessToken:accessToken url:urlStr apiUrl:apiUrl];
+    [self stroeAppkey:appKey accessToken:accessToken url:urlStr urlStrOther:urlStrOther apiUrl:apiUrl mode:modeStr];
 
     if (self.playerSwitch.on && [EZUIPlayer getPlayModeWithUrl:urlStr] == EZUIKIT_PLAYMODE_REC)
     {
@@ -227,6 +271,7 @@
         vc.appKey = appKey;
         vc.accessToken = accessToken;
         vc.urlStr = urlStr;
+        vc.urlStrOhter = urlStrOther;
         if (self.globalMode)
         {
             vc.apiUrl = apiUrl;
@@ -256,14 +301,31 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitAppKey];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitAccessToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitUrlStr];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitUrlStrOhter];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitApiUrl];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitMode];
 }
 
-- (void) stroeAppke:(NSString *) appKey accessToken:(NSString *) token url:(NSString *) urlStr apiUrl:(NSString *) apiUrl
+- (void) stroeAppkey:(NSString *) appKey
+         accessToken:(NSString *) token
+                 url:(NSString *) urlStr
+         urlStrOther:(NSString *) urlStrOther
+              apiUrl:(NSString *) apiUrl
+                mode:(NSString *) modeStr
 {
     [self storeString:appKey key:EZUIKitAppKey];
     [self storeString:token key:EZUIKitAccessToken];
     [self storeString:urlStr key:EZUIKitUrlStr];
+    
+    if (urlStrOther)
+    {
+        [self storeString:urlStrOther key:EZUIKitUrlStrOhter];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitUrlStrOhter];
+    }
+    
     if (apiUrl)
     {
         [self storeString:apiUrl key:EZUIKitApiUrl];
@@ -271,6 +333,15 @@
     else
     {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitApiUrl];
+    }
+    
+    if (modeStr)
+    {
+        [self storeString:modeStr key:EZUIKitMode];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:EZUIKitMode];
     }
 }
 
@@ -288,7 +359,9 @@
     //摄像头未授权
     if (authorizationStatus == AVAuthorizationStatusNotDetermined)
     {
-        [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:nil];
+        [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+            
+        }];
         return;
     }
     
@@ -373,10 +446,12 @@
 
 - (IBAction)playBtnClick:(id)sender
 {
+    NSString *modeStr = [self readStringWithKey:EZUIKitMode];
     [self showPlayerControllerWithAppKey:self.appKeyInput.text
                                   access:self.accessTokenInput.text
                                      url:self.urlInput.text
-                                  apiUrl:self.apiInput.text];
+                                  apiUrl:self.apiInput.text
+                                    mode:modeStr];
 }
 
 - (IBAction)clearBtnClick:(id)sender

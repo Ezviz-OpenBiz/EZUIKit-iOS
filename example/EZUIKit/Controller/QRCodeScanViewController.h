@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef  void (^QRCodeResult)(NSString *appKey,NSString *accessToken,NSString *urlStr,NSString *apiUrl);
+typedef  void (^QRCodeResult)(NSDictionary * jsonInfo);
 
 @interface QRCodeScanViewController : UIViewController
 

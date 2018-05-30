@@ -1,6 +1,0 @@
-framework module EZOpenSDKFramework {
-  umbrella header "EZOpenSDKFramework.h"
-
-  export *
-  module * { export * }
-}

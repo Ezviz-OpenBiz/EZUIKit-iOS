@@ -39,3 +39,5 @@
 "api_url_msg"="服务器地址不能为空";
 "url_ezopen_protocal"="3.Url (ezopen协议):";
 
+"switch" = "切换";
+

@@ -12,8 +12,8 @@
 #import "EZUIError.h"
 #import "Toast+UIView.h"
 #import "EZPlaybackProgressBar.h"
-#import <EZOpenSDKFramework/EZOpenSDKFramework.h>
-
+#import "EZDeviceRecordFile.h"
+#import "EZCloudRecordFile.h"
 
 @interface EZUIKitPlaybackViewController () <EZUIPlayerDelegate,EZPlaybackProgressDelegate>
 
@@ -88,13 +88,13 @@
     [self.playProgressBar scrollToDate:osdTime];
 }
 
-- (void) EZUIPlayerFinished
+- (void) EZUIPlayerFinished:(EZUIPlayer*) player
 {
     [self stop];
     self.playBtn.selected = NO;
 }
 
-- (void) EZUIPlayerPrepared
+- (void) EZUIPlayerPrepared:(EZUIPlayer*) player
 {
     if ([EZUIPlayer getPlayModeWithUrl:self.urlStr] ==  EZUIKIT_PLAYMODE_REC)
     {
@@ -115,31 +115,61 @@
     
     if ([error.errorString isEqualToString:UE_ERROR_INNER_VERIFYCODE_ERROR])
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"verify_code_wrong", @"验证码错误"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"verify_code_wrong", @"验证码错误"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     else if ([error.errorString isEqualToString:UE_ERROR_TRANSF_DEVICE_OFFLINE])
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"device_offline", @"设备不在线"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"device_offline", @"设备不在线"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     else if ([error.errorString isEqualToString:UE_ERROR_CAMERA_NOT_EXIST] ||
              [error.errorString isEqualToString:UE_ERROR_DEVICE_NOT_EXIST])
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"camera_not_exist", @"通道不存在"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"camera_not_exist", @"通道不存在"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     else if ([error.errorString isEqualToString:UE_ERROR_INNER_STREAM_TIMEOUT])
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"connect_out_time", @"连接超时"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"connect_out_time", @"连接超时"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     else if ([error.errorString isEqualToString:UE_ERROR_CAS_MSG_PU_NO_RESOURCE])
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"connect_device_limit", @"设备连接数过大"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"connect_device_limit", @"设备连接数过大"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     else
     {
-        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"play_fail", @"播放失败"),error.errorString] duration:1.5 position:@"center"];
+        [self.view makeToast:[NSString stringWithFormat:@"%@(%@[%ld])",
+                              NSLocalizedString(@"play_fail", @"播放失败"),
+                              error.errorString,
+                              error.internalErrorCode]
+                    duration:1.5
+                    position:@"center"];
     }
     
-    NSLog(@"play error:%@(%d)",error.errorString,error.internalErrorCode);
+    NSLog(@"play error:%@(%ld)",error.errorString,error.internalErrorCode);
 }
 
 - (void) EZUIPlayer:(EZUIPlayer *)player previewWidth:(CGFloat)pWidth previewHeight:(CGFloat)pHeight

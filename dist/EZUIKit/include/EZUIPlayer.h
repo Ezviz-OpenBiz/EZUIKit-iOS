@@ -48,13 +48,15 @@ typedef enum
 
 /**
  播放器准备完成回调
+ @param player 播放器对象
  */
-- (void) EZUIPlayerPrepared;
+- (void) EZUIPlayerPrepared:(EZUIPlayer *) player;
 
 /**
  播放结束，回放模式可用
+ @param player 播放器对象
  */
-- (void) EZUIPlayerFinished;
+- (void) EZUIPlayerFinished:(EZUIPlayer *) player;
 
 /**
  回放模式有效，播放的当前时间点回调，每1秒回调一次
@@ -85,13 +87,13 @@ typedef enum
  创建播放器实例
 
  @param serial 设备序列号
- @param camerNo 通道号
+ @param cameraNo 通道号
  @param verifyCode 验证码，未开启视频加密，则为nil
  @param isHd 是否高清
  @return 创建播放器实例
  */
 + (EZUIPlayer *) createPlayerWithSerial:(NSString *) serial
-                                camerNo:(NSUInteger) camerNo
+                               cameraNo:(NSUInteger) cameraNo
                              verifyCode:(NSString *) verifyCode
                                      hd:(BOOL) isHd;
 
